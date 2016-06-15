@@ -1,0 +1,381 @@
+ // * --------------------------
+ // * created by seven 20160614
+ // * --------------------------
+@charset 'utf-8';
+@import 'globle.scss';
+ /*******************************
+            Button
+*******************************/
+.ui.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: none;
+  border: none;
+  vertical-align: baseline;
+  background: $btn-normal-bg-color none;
+  color: $btn-color;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  margin: 0em 0.25em 0em 0em;
+  padding: 0.78571429em 1.5em 0.78571429em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: bold;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.28571429rem;
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px $btn-shadow-color inset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+          transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  will-change: '';
+  -webkit-tap-highlight-color: transparent;
+}
+/*--------------
+      Hover
+---------------*/
+.ui.button:hover {
+  background-color: darken($btn-normal-bg-color, 5%);
+  background-image: none;
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px $btn-shadow-color inset;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*--------------
+      Focus
+---------------*/
+.ui.button:focus {
+  background-color: darken($btn-normal-bg-color, 5%);
+  color: rgba(0, 0, 0, 0.8);
+  background-image: '' !important;
+  box-shadow: '' !important;
+}
+
+/*--------------
+      Down
+---------------*/
+.ui.button:active,
+.ui.active.button:active {
+  background-color: darken($btn-normal-bg-color, 10%);
+  background-image: '';
+  color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 0px 1px transparent inset, none;
+}
+/*--------------
+     Active
+---------------*/
+.ui.active.button {
+  background-color: darken($btn-normal-bg-color, 10%);
+  background-image: none;
+  box-shadow: 0px 0px 0px 1px transparent inset;
+  color: rgba(0, 0, 0, 0.95);
+}
+.ui.active.button:hover {
+  background-color: darken($btn-normal-bg-color, 5%);
+  background-image: none;
+  color: rgba(0, 0, 0, 0.95);
+}
+.ui.active.button:active {
+  background-color: darken($btn-normal-bg-color, 5%);
+  background-image: none;
+}
+/*-------------------
+      Disabled
+--------------------*/
+.ui.buttons .disabled.button,
+.ui.disabled.button,
+.ui.button:disabled,
+.ui.disabled.button:hover,
+.ui.disabled.active.button {
+  cursor: default;
+  opacity: 0.45 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+/*-------------------
+        Basic
+--------------------*/
+.ui.button, .ui.buttons .button, .ui.buttons .or {
+    font-size: 1rem;
+}
+.ui.basic.buttons .button,
+.ui.basic.button {
+  background: transparent none !important;
+  color: $btn-color !important;
+  font-weight: normal;
+  border-radius: 0.28571429rem;
+  text-transform: none;
+  text-shadow: none !important;
+  box-shadow: 0px 0px 0px 1px $btn-shadow-color inset;
+}
+.ui.basic.buttons {
+  box-shadow: none;
+  border: 1px solid $btn-shadow-color;
+  border-radius: 0.28571429rem;
+}
+.ui.basic.buttons .button {
+  border-radius: 0em;
+}
+.ui.basic.buttons .button:hover,
+.ui.basic.button:hover {
+  background: #ffffff !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px $btn-shadow-color inset;
+}
+.ui.basic.buttons .button:focus,
+.ui.basic.button:focus {
+  background: #ffffff !important;
+  color: rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px $btn-shadow-color inset;
+}
+.ui.basic.buttons .button:active,
+.ui.basic.button:active {
+  background: #f8f8f8 !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px $btn-shadow-color inset;
+}
+.ui.basic.buttons .active.button,
+.ui.basic.active.button {
+  background: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: '' !important;
+  color: rgba(0, 0, 0, 0.95);
+  box-shadow: rgba(34, 36, 38, 0.35);
+}
+.ui.basic.buttons .active.button:hover,
+.ui.basic.active.button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.ui.basic.buttons .button {
+  border-left: 1px solid $btn-shadow-color;
+  box-shadow: none;
+}
+/* Vertical */
+.ui.basic.buttons .button:hover {
+  box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.35) inset, 0px 0px 0px 0px $btn-shadow-color inset inset;
+}
+.ui.basic.buttons .button:active {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15) inset, 0px 1px 4px 0px $btn-shadow-color inset inset;
+}
+.ui.basic.buttons .active.button {
+  box-shadow: rgba(34, 36, 38, 0.35) inset;
+}
+
+/*-------------------
+       Primary
+--------------------*/
+
+.ui.primary.buttons .button,
+.ui.primary.button {
+  background-color: $btn-primary-bg-color;
+  color: $btn-primary-color;
+  text-shadow: none;
+  background-image: none;
+}
+.ui.primary.button {
+  box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+.ui.primary.buttons .button:hover,
+.ui.primary.button:hover {
+  background-color: darken($btn-primary-bg-color, 5%);
+  color: $btn-primary-color;
+  text-shadow: none;
+}
+.ui.primary.buttons .button:focus,
+.ui.primary.button:focus {
+  background-color: darken($btn-primary-bg-color, 5%);
+  color: $btn-primary-color;
+  text-shadow: none;
+}
+.ui.primary.buttons .button:active,
+.ui.primary.button:active {
+  background-color: darken($btn-primary-bg-color, 10%);
+  color: $btn-primary-color;
+  text-shadow: none;
+}
+.ui.primary.buttons .active.button,
+.ui.primary.active.button {
+  background-color: darken($btn-primary-bg-color, 10%);
+  color: $btn-primary-color;
+  text-shadow: none;
+}
+
+
+
+/*---------------
+    Positive
+----------------*/
+.ui.positive.buttons .button,
+.ui.positive.button {
+  background-color: $btn-positive-bg-color !important;
+  color: $btn-positive-color;
+  text-shadow: none;
+  background-image: none;
+}
+.ui.positive.button {
+  box-shadow: 0px 0em 0px 0px $btn-shadow-color inset;
+}
+.ui.positive.buttons .button:hover,
+.ui.positive.button:hover {
+  background-color: darken($btn-positive-bg-color, 5%) !important;
+  color: $btn-positive-color;
+  text-shadow: none;
+}
+.ui.positive.buttons .button:focus,
+.ui.positive.button:focus {
+  background-color: darken($btn-positive-bg-color, 5%) !important;
+  color: $btn-positive-color;
+  text-shadow: none;
+}
+.ui.positive.buttons .button:active,
+.ui.positive.button:active {
+  background-color: darken($btn-positive-bg-color, 10%) !important;
+  color: $btn-positive-color;
+  text-shadow: none;
+}
+.ui.positive.buttons .active.button,
+.ui.positive.active.button,
+.ui.positive.buttons .active.button:active {
+  background-color: darken($btn-positive-bg-color, 10%);
+  color: $btn-positive-color;
+  text-shadow: none;
+}
+/*---------------
+     Negative
+----------------*/
+.ui.negative.buttons .button,
+.ui.negative.button {
+  background-color: $btn-negative-bg-color !important;
+  color: $btn-negative-color;
+  text-shadow: none;
+  background-image: none;
+}
+.ui.negative.button {
+  box-shadow: 0px 0em 0px 0px $btn-shadow-color inset;
+}
+.ui.negative.buttons .button:hover,
+.ui.negative.button:hover {
+  background-color: darken($btn-negative-bg-color, 5%) !important;
+  color: $btn-negative-color;
+  text-shadow: none;
+}
+.ui.negative.buttons .button:focus,
+.ui.negative.button:focus {
+  background-color: darken($btn-negative-bg-color, 5%) !important;
+  color: $btn-negative-color;
+  text-shadow: none;
+}
+.ui.negative.buttons .button:active,
+.ui.negative.button:active {
+  background-color: darken($btn-negative-bg-color, 10%) !important;
+  color: $btn-negative-color;
+  text-shadow: none;
+}
+.ui.negative.buttons .active.button,
+.ui.negative.active.button,
+.ui.negative.buttons .active.button:active {
+  background-color: darken($btn-negative-bg-color, 10%);
+  color: $btn-negative-color;
+  text-shadow: none;
+}
+/*******************************
+            Groups
+*******************************/
+.ui.buttons {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 0em;
+  vertical-align: baseline;
+  margin: 0em 0.25em 0em 0em;
+}
+.ui.buttons:not(.basic):not(.inverted) {
+  box-shadow: none;
+}
+/* Clearfix */
+.ui.buttons:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Standard Group */
+.ui.buttons .button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  margin: 0em;
+  border-radius: 0em;
+  margin: 0px 0px 0px 0px;
+}
+.ui.buttons > .ui.button:not(.basic):not(.inverted),
+.ui.buttons:not(.basic):not(.inverted) > .button {
+  box-shadow: 0px 0px 0px 1px transparent inset, 0px 0em 0px 0px $btn-shadow-color inset;
+}
+.ui.buttons .button:first-child {
+  border-left: none;
+  margin-left: 0em;
+  border-top-left-radius: 0.28571429rem;
+  border-bottom-left-radius: 0.28571429rem;
+}
+.ui.buttons .button:last-child {
+  border-top-right-radius: 0.28571429rem;
+  border-bottom-right-radius: 0.28571429rem;
+}
+.ui.buttons:not(.vertical)>.basic.blue.button:not(:first-child) {
+    margin-left: -1px;
+}
+.ui.mini.buttons .button,
+.ui.mini.buttons .or,
+.ui.mini.button {
+  font-size: 0.71428571rem;
+}
+.ui.tiny.buttons .button,
+.ui.tiny.buttons .or,
+.ui.tiny.button {
+  font-size: 0.85714286rem;
+}
+.ui.small.buttons .button,
+.ui.small.buttons .or,
+.ui.small.button {
+  font-size: 0.92857143rem;
+}
+.ui.buttons .button,
+.ui.buttons .or,
+.ui.button {
+  font-size: 1rem;
+}
+.ui.large.buttons .button,
+.ui.large.buttons .or,
+.ui.large.button {
+  font-size: 1.14285714rem;
+}
+.ui.big.buttons .button,
+.ui.big.buttons .or,
+.ui.big.button {
+  font-size: 1.28571429rem;
+}
+.ui.huge.buttons .button,
+.ui.huge.buttons .or,
+.ui.huge.button {
+  font-size: 1.42857143rem;
+}
+.ui.massive.buttons .button,
+.ui.massive.buttons .or,
+.ui.massive.button {
+  font-size: 1.71428571rem;
+}
