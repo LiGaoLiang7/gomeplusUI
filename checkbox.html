@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/checkbox.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <!-- <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script> -->
+    <!-- <script src="./js/checkbox.min.js"></script> -->
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+    <!-- Emphasis -->
+    <div class="ui top attached secondary segment">
+        <p>this segment is on top</p>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui checkbox">
+            <input id="example" type="checkbox" name="example">
+            <label for="example">Make my profile visible</label>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui radio checkbox">
+            <input type="radio" name="radio" id="radio">
+            <label for="radio">Radio choice</label>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="inline fields">
+                <label>How often do you use checkboxes?</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="frequency" checked="checked">
+                        <label>Once a week</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="frequency">
+                        <label>2-3 times a week</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="frequency">
+                        <label>Once a day</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="frequency">
+                        <label>Twice a day</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui slider checkbox">
+            <input type="checkbox" name="newsletter" id="checkbox1">
+            <label for="checkbox1">Accept terms and conditions</label>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="grouped fields">
+                <label>Outbound Throughput</label>
+                <div class="field">
+                    <div class="ui slider checkbox">
+                        <input type="radio" name="throughput" checked="checked" id="throughput1">
+                        <label for="throughput1">20 mbps max</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui slider checkbox">
+                        <input type="radio" name="throughput" id="throughput2">
+                        <label for="throughput2">10mbps max</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui slider checkbox">
+                        <input type="radio" name="throughput" id="throughput3">
+                        <label for="throughput3">5mbps max</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui slider checkbox checked">
+                        <input type="radio" name="throughput" id="throughput4">
+                        <label for="throughput4">Unmetered</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui slider disabled checkbox">
+            <input type="checkbox" name="newsletter" id="checkbox">
+            <label for="checkbox">disabled checkbox options</label>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui toggle checkbox">
+            <input type="checkbox" name="public" id="public">
+            <label for="public">Subscribe to weekly newsletter</label>
+        </div>
+    </div>
+    <div class="ui bottom attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <script>
+    $(function() {
+        $('.ui.radio.checkbox').checkbox();
+        // $('.ui.slider.checkbox').checkox();
+    });
+    </script>
+</body>
+
+</html>

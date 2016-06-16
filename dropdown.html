@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dropdown</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/dropdown.css">
+    <link rel="stylesheet" href="./css/input.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/transition.min.js"></script>
+    <script src="./js/dropdown.min.js"></script>
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+    <!-- Emphasis -->
+    <div class="ui top attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui dropdown">
+            class
+            <div class="menu">
+                <div class="item">a</div>
+                <div class="item">b</div>
+                <div class="item">c</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+    </div>
+    <div class="ui bottom attached tertiary segment">
+        <p>This segment is on bottom</p>
+    </div>
+</body>
+<script>
+$(function() {
+    $('.ui.dropdown').dropdown();
+});
+</script>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/btn.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/label.css">
+    <link rel="stylesheet" href="./css/checkbox.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+    <div class="ui top attached segment">
+        <p>This segment is on top</p>
+    </div>
+    <div class="ui attached segment">
+        <form class="ui form">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="first-name" placeholder="First Name">
+                <div class="ui below pointing basic red label" style="margin-top: 5px;">Please enter a value! </div>
+            </div>
+            <div class="field">
+                <label>Last Name</label>
+                <input type="text" name="last-name" placeholder="Last Name">
+            </div>
+            <div class="field">
+                <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="">
+                    <label>I agree to the Terms and Conditions</label>
+                </div>
+            </div>
+            <button class="ui button primary" type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="fields">
+                <div class="field">
+                    <label>First name</label>
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="field">
+                    <label>Middle name</label>
+                    <input type="text" placeholder="Middle Name">
+                </div>
+                <div class="field">
+                    <label>Last name</label>
+                    <input type="text" placeholder="Last Name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="three fields">
+                <div class="field">
+                    <label>First name</label>
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="field">
+                    <label>Middle name</label>
+                    <input type="text" placeholder="Middle Name">
+                </div>
+                <div class="field">
+                    <label>Last name</label>
+                    <input type="text" placeholder="Last Name">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="field">
+                <label>User Input</label>
+                <input type="text" placeholder="A field is a form element containing a label and an input">
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="inline fields">
+                <div class="eight wide field">
+                    <label>Name</label>
+                    <input type="text" placeholder="First Name">
+
+                </div>
+                <div class="three wide field">
+                    <input type="text" placeholder="Middle Name">
+                </div>
+                <div class="five wide field">
+                    <input type="text" placeholder="Last Name">
+                    <div class="ui left pointing basic green label" style="margin-top: 5px;">Please enter a name! </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="field">
+                <label>Text</label>
+                <textarea style="margin-top: 0px; margin-bottom: 0px;"></textarea>
+                <!-- define max-height and min-height -->
+            </div>
+            <div class="field">
+                <label>Short Text</label>
+                <textarea rows="2" style="margin-top: 0px; margin-bottom: 0px;"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="inline field">
+                <div class="ui checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>Checkbox</label>
+                </div>
+                <div class="ui slider checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>Slider</label>
+                </div>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                    <label>Toggle</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>Label</label>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="inline fields">
+                <label for="fruit">Select your favorite fruit:</label>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+                        <label>Apples</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" tabindex="0" class="hidden">
+                        <label>Oranges</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" tabindex="0" class="hidden">
+                        <label>Pears</label>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="fruit" tabindex="0" class="hidden">
+                        <label>Grapefruit</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui bottom attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/checkbox.min.js"></script>
+    <script>
+    $(function() {
+        $('.checkbox').checkbox();
+        $('.ui.radio.checkbox').checkbox();
+    })
+    </script>
+</body>
+
+</html>
