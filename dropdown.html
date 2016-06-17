@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="./css/dropdown.css">
     <link rel="stylesheet" href="./css/input.css">
     <link rel="stylesheet" href="./css/form.css">
-    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
-    <script src="./js/transition.min.js"></script>
-    <script src="./js/dropdown.min.js"></script>
+    <link rel="stylesheet" href="./css/icon.css">
+    <link rel="stylesheet" href="./css/label.css">
+    <!-- <link rel="stylesheet" href="./css/transition.min.css"> -->
+    <link rel="stylesheet" href="./css/transition.css">
 </head>
 
 <body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
@@ -21,24 +22,439 @@
     </div>
     <div class="ui attached segment">
         <div class="ui dropdown">
-            class
+            select <i class="icon dropdown"></i>
             <div class="menu">
-                <div class="item">a</div>
-                <div class="item">b</div>
-                <div class="item">c</div>
+                <div class="item">option a</div>
+                <div class="item">option b</div>
+                <div class="item">option c </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>Selection dropdowns can be initialized directly on a select or with the matching HTML and a hidden input</p>
+        <div class="ui selection dropdown">
+            <input type="hidden" name="gender">
+            <div class="default text">Gender</div>
+            <i class="icon dropdown"></i>
+            <div class="menu">
+                <div class="item" data-value="1">Male</div>
+                <div class="item" data-value="0">Female</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>The element select can be used directly,but it was hidden on page, the matching HTML taken place of it.</p>
+        <select class="ui dropdown">
+            <option value="">Gender</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+    </div>
+    <div class="ui attached segment">
+        <p>fluid selection dropdown</p>
+        <div class="ui fluid selection dropdown">
+            <input type="hidden" name="user">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Friend</div>
+            <div class="menu">
+                <div class="item" data-value="jenny">
+                    <img class="ui mini avatar image" src="http://placekitten.com/24/24"> Jenny Hess
+                </div>
+                <div class="item" data-value="elliot">
+                    <img class="ui mini avatar image" src="http://placekitten.com/30/30"> Elliot Fu
+                </div>
+                <div class="item" data-value="stevie">
+                    <img class="ui mini avatar image" src="http://placekitten.com/34/34"> Stevie Feliciano
+                </div>
+                <div class="item" data-value="christian">
+                    <img class="ui mini avatar image" src="http://placekitten.com/40/40"> Christian
+                </div>
+                <div class="item" data-value="matt">
+                    <img class="ui mini avatar image" src="http://placekitten.com/50/50"> Matt
+                </div>
+                <div class="item" data-value="justen">
+                    <img class="ui mini avatar image" src="http://placekitten.com/44/44"> Justen Kitsune
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>A search selection dropdown can allow a user to search through a large list of choices</p>
+        <div class="ui search selection dropdown">
+            <input type="hidden" name="country">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Country</div>
+            <div class="menu">
+                <div class="item" data-value="af">Afghanistan</div>
+                <div class="item" data-value="ax">Aland Islands</div>
+                <div class="item" data-value="al">Albania</div>
+                <div class="item" data-value="dz">Algeria</div>
+                <div class="item" data-value="as">American Samoa</div>
+                <div class="item" data-value="ad">Andorra</div>
+                <div class="item" data-value="ao">Angola</div>
+                <div class="item" data-value="ai">Anguilla</div>
+                <div class="item" data-value="ag">Antigua</div>
+                <div class="item" data-value="ar">Argentina</div>
+                <div class="item" data-value="am">Armenia</div>
+                <div class="item" data-value="aw">Aruba</div>
+                <div class="item" data-value="au">Australia</div>
+                <div class="item" data-value="at">Austria</div>
+                <div class="item" data-value="az">Azerbaijan</div>
+                <div class="item" data-value="bs">Bahamas</div>
+                <div class="item" data-value="bh">Bahrain</div>
+                <div class="item" data-value="bd">Bangladesh</div>
+                <div class="item" data-value="bb">Barbados</div>
+                <div class="item" data-value="by">Belarus</div>
+                <div class="item" data-value="be">Belgium</div>
+                <div class="item" data-value="bz">Belize</div>
+                <div class="item" data-value="bj">Benin</div>
+                <div class="item" data-value="bm">Bermuda</div>
+                <div class="item" data-value="bt">Bhutan</div>
+                <div class="item" data-value="bo">Bolivia</div>
+                <div class="item" data-value="ba">Bosnia</div>
+                <div class="item" data-value="bw">Botswana</div>
+                <div class="item" data-value="bv">Bouvet Island</div>
+                <div class="item" data-value="br">Brazil</div>
+                <div class="item" data-value="vg">British Virgin Islands</div>
+                <div class="item" data-value="bn">Brunei</div>
+                <div class="item" data-value="bg">Bulgaria</div>
+                <div class="item" data-value="bf">Burkina Faso</div>
+                <div class="item" data-value="ar">Burma</div>
+                <div class="item" data-value="bi">Burundi</div>
+                <div class="item" data-value="tc">Caicos Islands</div>
+                <div class="item" data-value="kh">Cambodia</div>
+                <div class="item" data-value="cm">Cameroon</div>
+                <div class="item" data-value="ca">Canada</div>
+                <div class="item" data-value="cv">Cape Verde</div>
+                <div class="item" data-value="ky">Cayman Islands</div>
+                <div class="item" data-value="cf">Central African Republic</div>
+                <div class="item" data-value="td">Chad</div>
+                <div class="item" data-value="cl">Chile</div>
+                <div class="item" data-value="cn">China</div>
+                <div class="item" data-value="cx">Christmas Island</div>
+                <div class="item" data-value="cc">Cocos Islands</div>
+                <div class="item" data-value="co">Colombia</div>
+                <div class="item" data-value="km">Comoros</div>
+                <div class="item" data-value="cg">Congo Brazzaville</div>
+                <div class="item" data-value="cd">Congo</div>
+                <div class="item" data-value="ck">Cook Islands</div>
+                <div class="item" data-value="cr">Costa Rica</div>
+                <div class="item" data-value="ci">Cote Divoire</div>
+                <div class="item" data-value="hr">Croatia</div>
+                <div class="item" data-value="cu">Cuba</div>
+                <div class="item" data-value="cy">Cyprus</div>
+                <div class="item" data-value="cz">Czech Republic</div>
+                <div class="item" data-value="dk">Denmark</div>
+                <div class="item" data-value="dj">Djibouti</div>
+                <div class="item" data-value="dm">Dominica</div>
+                <div class="item" data-value="do">Dominican Republic</div>
+                <div class="item" data-value="ec">Ecuador</div>
+                <div class="item" data-value="eg">Egypt</div>
+                <div class="item" data-value="sv">El Salvador</div>
+                <div class="item" data-value="gb">England</div>
+                <div class="item" data-value="gq">Equatorial Guinea</div>
+                <div class="item" data-value="er">Eritrea</div>
+                <div class="item" data-value="ee">Estonia</div>
+                <div class="item" data-value="et">Ethiopia</div>
+                <div class="item" data-value="eu">European Union</div>
+                <div class="item" data-value="fk">Falkland Islands</div>
+                <div class="item" data-value="fo">Faroe Islands</div>
+                <div class="item" data-value="fj">Fiji</div>
+                <div class="item" data-value="fi">Finland</div>
+                <div class="item" data-value="fr">France</div>
+                <div class="item" data-value="gf">French Guiana</div>
+                <div class="item" data-value="pf">French Polynesia</div>
+                <div class="item" data-value="tf">French Territories</div>
+                <div class="item" data-value="ga">Gabon</div>
+                <div class="item" data-value="gm">Gambia</div>
+                <div class="item" data-value="ge">Georgia</div>
+                <div class="item" data-value="de">Germany</div>
+                <div class="item" data-value="gh">Ghana</div>
+                <div class="item" data-value="gi">Gibraltar</div>
+                <div class="item" data-value="gr">Greece</div>
+                <div class="item" data-value="gl">Greenland</div>
+                <div class="item" data-value="gd">Grenada</div>
+                <div class="item" data-value="gp">Guadeloupe</div>
+                <div class="item" data-value="gu">Guam</div>
+                <div class="item" data-value="gt">Guatemala</div>
+                <div class="item" data-value="gw">Guinea-Bissau</div>
+                <div class="item" data-value="gn">Guinea</div>
+                <div class="item" data-value="gy">Guyana</div>
+                <div class="item" data-value="ht">Haiti</div>
+                <div class="item" data-value="hm">Heard Island</div>
+                <div class="item" data-value="hn">Honduras</div>
+                <div class="item" data-value="hk">Hong Kong</div>
+                <div class="item" data-value="hu">Hungary</div>
+                <div class="item" data-value="is">Iceland</div>
+                <div class="item" data-value="in">India</div>
+                <div class="item" data-value="io">Indian Ocean Territory</div>
+                <div class="item" data-value="id">Indonesia</div>
+                <div class="item" data-value="ir">Iran</div>
+                <div class="item" data-value="iq">Iraq</div>
+                <div class="item" data-value="ie">Ireland</div>
+                <div class="item" data-value="il">Israel</div>
+                <div class="item" data-value="it">Italy</div>
+                <div class="item" data-value="jm">Jamaica</div>
+                <div class="item" data-value="jp">Japan</div>
+                <div class="item" data-value="jo">Jordan</div>
+                <div class="item" data-value="kz">Kazakhstan</div>
+                <div class="item" data-value="ke">Kenya</div>
+                <div class="item" data-value="ki">Kiribati</div>
+                <div class="item" data-value="kw">Kuwait</div>
+                <div class="item" data-value="kg">Kyrgyzstan</div>
+                <div class="item" data-value="la">Laos</div>
+                <div class="item" data-value="lv">Latvia</div>
+                <div class="item" data-value="lb">Lebanon</div>
+                <div class="item" data-value="ls">Lesotho</div>
+                <div class="item" data-value="lr">Liberia</div>
+                <div class="item" data-value="ly">Libya</div>
+                <div class="item" data-value="li">Liechtenstein</div>
+                <div class="item" data-value="lt">Lithuania</div>
+                <div class="item" data-value="lu">Luxembourg</div>
+                <div class="item" data-value="mo">Macau</div>
+                <div class="item" data-value="mk">Macedonia</div>
+                <div class="item" data-value="mg">Madagascar</div>
+                <div class="item" data-value="mw">Malawi</div>
+                <div class="item" data-value="my">Malaysia</div>
+                <div class="item" data-value="mv">Maldives</div>
+                <div class="item" data-value="ml">Mali</div>
+                <div class="item" data-value="mt">Malta</div>
+                <div class="item" data-value="mh">Marshall Islands</div>
+                <div class="item" data-value="mq">Martinique</div>
+                <div class="item" data-value="mr">Mauritania</div>
+                <div class="item" data-value="mu">Mauritius</div>
+                <div class="item" data-value="yt">Mayotte</div>
+                <div class="item" data-value="mx">Mexico</div>
+                <div class="item" data-value="fm">Micronesia</div>
+                <div class="item" data-value="md">Moldova</div>
+                <div class="item" data-value="mc">Monaco</div>
+                <div class="item" data-value="mn">Mongolia</div>
+                <div class="item" data-value="me">Montenegro</div>
+                <div class="item" data-value="ms">Montserrat</div>
+                <div class="item" data-value="ma">Morocco</div>
+                <div class="item" data-value="mz">Mozambique</div>
+                <div class="item" data-value="na">Namibia</div>
+                <div class="item" data-value="nr">Nauru</div>
+                <div class="item" data-value="np">Nepal</div>
+                <div class="item" data-value="an">Netherlands Antilles</div>
+                <div class="item" data-value="nl">Netherlands</div>
+                <div class="item" data-value="nc">New Caledonia</div>
+                <div class="item" data-value="pg">New Guinea</div>
+                <div class="item" data-value="nz">New Zealand</div>
+                <div class="item" data-value="ni">Nicaragua</div>
+                <div class="item" data-value="ne">Niger</div>
+                <div class="item" data-value="ng">Nigeria</div>
+                <div class="item" data-value="nu">Niue</div>
+                <div class="item" data-value="nf">Norfolk Island</div>
+                <div class="item" data-value="kp">North Korea</div>
+                <div class="item" data-value="mp">Northern Mariana Islands</div>
+                <div class="item" data-value="no">Norway</div>
+                <div class="item" data-value="om">Oman</div>
+                <div class="item" data-value="pk">Pakistan</div>
+                <div class="item" data-value="pw">Palau</div>
+                <div class="item" data-value="ps">Palestine</div>
+                <div class="item" data-value="pa">Panama</div>
+                <div class="item" data-value="py">Paraguay</div>
+                <div class="item" data-value="pe">Peru</div>
+                <div class="item" data-value="ph">Philippines</div>
+                <div class="item" data-value="pn">Pitcairn Islands</div>
+                <div class="item" data-value="pl">Poland</div>
+                <div class="item" data-value="pt">Portugal</div>
+                <div class="item" data-value="pr">Puerto Rico</div>
+                <div class="item" data-value="qa">Qatar</div>
+                <div class="item" data-value="re">Reunion</div>
+                <div class="item" data-value="ro">Romania</div>
+                <div class="item" data-value="ru">Russia</div>
+                <div class="item" data-value="rw">Rwanda</div>
+                <div class="item" data-value="sh">Saint Helena</div>
+                <div class="item" data-value="kn">Saint Kitts and Nevis</div>
+                <div class="item" data-value="lc">Saint Lucia</div>
+                <div class="item" data-value="pm">Saint Pierre</div>
+                <div class="item" data-value="vc">Saint Vincent</div>
+                <div class="item" data-value="ws">Samoa</div>
+                <div class="item" data-value="sm">San Marino</div>
+                <div class="item" data-value="gs">Sandwich Islands</div>
+                <div class="item" data-value="st">Sao Tome</div>
+                <div class="item" data-value="sa">Saudi Arabia</div>
+                <div class="item" data-value="sn">Senegal</div>
+                <div class="item" data-value="cs">Serbia</div>
+                <div class="item" data-value="rs">Serbia</div>
+                <div class="item" data-value="sc">Seychelles</div>
+                <div class="item" data-value="sl">Sierra Leone</div>
+                <div class="item" data-value="sg">Singapore</div>
+                <div class="item" data-value="sk">Slovakia</div>
+                <div class="item" data-value="si">Slovenia</div>
+                <div class="item" data-value="sb">Solomon Islands</div>
+                <div class="item" data-value="so">Somalia</div>
+                <div class="item" data-value="za">South Africa</div>
+                <div class="item" data-value="kr">South Korea</div>
+                <div class="item" data-value="es">Spain</div>
+                <div class="item" data-value="lk">Sri Lanka</div>
+                <div class="item" data-value="sd">Sudan</div>
+                <div class="item" data-value="sr">Suriname</div>
+                <div class="item" data-value="sj">Svalbard</div>
+                <div class="item" data-value="sz">Swaziland</div>
+                <div class="item" data-value="se">Sweden</div>
+                <div class="item" data-value="ch">Switzerland</div>
+                <div class="item" data-value="sy">Syria</div>
+                <div class="item" data-value="tw">Taiwan</div>
+                <div class="item" data-value="tj">Tajikistan</div>
+                <div class="item" data-value="tz">Tanzania</div>
+                <div class="item" data-value="th">Thailand</div>
+                <div class="item" data-value="tl">Timorleste</div>
+                <div class="item" data-value="tg">Togo</div>
+                <div class="item" data-value="tk">Tokelau</div>
+                <div class="item" data-value="to">Tonga</div>
+                <div class="item" data-value="tt">Trinidad</div>
+                <div class="item" data-value="tn">Tunisia</div>
+                <div class="item" data-value="tr">Turkey</div>
+                <div class="item" data-value="tm">Turkmenistan</div>
+                <div class="item" data-value="tv">Tuvalu</div>
+                <div class="item" data-value="ug">Uganda</div>
+                <div class="item" data-value="ua">Ukraine</div>
+                <div class="item" data-value="ae">United Arab Emirates</div>
+                <div class="item" data-value="us">United States</div>
+                <div class="item" data-value="uy">Uruguay</div>
+                <div class="item" data-value="um">Us Minor Islands</div>
+                <div class="item" data-value="vi">Us Virgin Islands</div>
+                <div class="item" data-value="uz">Uzbekistan</div>
+                <div class="item" data-value="vu">Vanuatu</div>
+                <div class="item" data-value="va">Vatican City</div>
+                <div class="item" data-value="ve">Venezuela</div>
+                <div class="item" data-value="vn">Vietnam</div>
+                <div class="item" data-value="wf">Wallis and Futuna</div>
+                <div class="item" data-value="eh">Western Sahara</div>
+                <div class="item" data-value="ye">Yemen</div>
+                <div class="item" data-value="zm">Zambia</div>
+                <div class="item" data-value="zw">Zimbabwe</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>Multiple selection</p>
+        <select name="skills" multiple="" class="ui fluid dropdown normal-max">
+            <option value="">Skills</option>
+            <option value="angular">Angular</option>
+            <option value="css">CSS</option>
+            <option value="design">Graphic Design</option>
+            <option value="ember">Ember</option>
+            <option value="html">HTML</option>
+            <option value="ia">Information Architecture</option>
+            <option value="javascript">Javascript</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="meteor">Meteor</option>
+            <option value="node">NodeJS</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="python">Python</option>
+            <option value="rails">Rails</option>
+            <option value="react">React</option>
+            <option value="repair">Kitchen Repair</option>
+            <option value="ruby">Ruby</option>
+            <option value="ui">UI Design</option>
+            <option value="ux">User Experience</option>
+        </select>
+    </div>
+    <div class="ui attached segment">
+        <p>Tagging and User Additions.Gives users the ability to add their own options</p>
+        <div class="ui fluid multiple search selection dropdown allow-addtion">
+            <input name="tags" type="hidden">
+            <i class="dropdown icon"></i>
+            <div class="default text">Skills</div>
+            <div class="menu">
+                <div class="item" data-value="angular">Angular</div>
+                <div class="item" data-value="css">CSS</div>
+                <div class="item" data-value="design">Graphic Design</div>
+                <div class="item" data-value="ember">Ember</div>
+                <div class="item" data-value="html">HTML</div>
+                <div class="item" data-value="ia">Information Architecture</div>
+                <div class="item" data-value="javascript">Javascript</div>
+                <div class="item" data-value="mech">Mechanical Engineering</div>
+                <div class="item" data-value="meteor">Meteor</div>
+                <div class="item" data-value="node">NodeJS</div>
+                <div class="item" data-value="plumbing">Plumbing</div>
+                <div class="item" data-value="python">Python</div>
+                <div class="item" data-value="rails">Rails</div>
+                <div class="item" data-value="react">React</div>
+                <div class="item" data-value="repair">Kitchen Repair</div>
+                <div class="item" data-value="ruby">Ruby</div>
+                <div class="item" data-value="ui">UI Design</div>
+                <div class="item" data-value="ux">User Experience</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form">
+            <div class="inline fields">
+                <div class="ui field">
+                    <label>First Name</label>
+                    <input placeholder="First Name" type="text">
+                </div>
+                <div class="ui field">
+                    <label>Last Name</label>
+                    <input placeholder="Last Name" type="text">
+                </div>
+                <div class="ui field">
+                    <label>Gender</label>
+                    <div class="ui dropdown selection">
+                        <input type="hidden" name="gender">
+                        <div class="default text">Select Gender</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" data-value="male">Male</div>
+                            <div class="item" data-value="female">Female</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui floating dropdown labeled search icon button">
+            <i class="icon world"></i>
+            <span class="text">Select Language</span>
+            <div class="menu">
+                <div class="item">Arabic</div>
+                <div class="item">Chinese</div>
+                <div class="item">Danish</div>
+                <div class="item">Dutch</div>
+                <div class="item">English</div>
+                <div class="item">French</div>
+                <div class="item">German</div>
+                <div class="item">Greek</div>
+                <div class="item">Hungarian</div>
+                <div class="item">Italian</div>
+                <div class="item">Japanese</div>
+                <div class="item">Korean</div>
+                <div class="item">Lithuanian</div>
+                <div class="item">Persian</div>
+                <div class="item">Polish</div>
+                <div class="item">Portuguese</div>
+                <div class="item">Russian</div>
+                <div class="item">Spanish</div>
+                <div class="item">Swedish</div>
+                <div class="item">Turkish</div>
+                <div class="item">Vietnamese</div>
             </div>
         </div>
     </div>
     <div class="ui attached segment">
     </div>
     <div class="ui bottom attached tertiary segment">
-        <p>This segment is on bottom</p>
+        <p>This ssegment is on bottom</p>
     </div>
-</body>
-<script>
-$(function() {
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/transition.min.js"></script>
+    <script src="./js/dropdown.min.js"></script>
+    <script>
     $('.ui.dropdown').dropdown();
-});
-</script>
+    $('.ui.normal-max.dropdown')
+        .dropdown({
+            maxSelections: 5
+        });
+    $('.multiple.search.selection.dropdown.allow-addtion').dropdown({
+        allowAdditions: true
+    });
+    </script>
+</body>
 
 </html>

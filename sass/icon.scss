@@ -38,7 +38,6 @@ i.icon:before {
   background: none !important;
 }
 
-
 /* Web Content */
 i.icon.search:before {
   content: "\f002";
@@ -51,4 +50,16 @@ i.icon.users:before {
 }
 i.icon.mail:before {
   content: "\f0e0";
+}
+i.icon.dropdown:before {
+  content: "\f0d7";
+}
+i.icon.close:before {
+  content: "\f00d";
+}
+i.icon.delete:before {
+  content: "\f00d";
+}
+i.icon.world:before {
+  content: "\f0ac";
 }

@@ -6,12 +6,14 @@
  */
 
 html {
+  box-sizing:border-box;
   font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; //opinionated
   font-size:14px;
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
-
+/* I WILL ADD THIS PROPERTY IN PUBLIC.CSS */
+*,:after,:before{box-sizing:inherit;}
 
 /**
  * Remove the margin in all browsers (opinionated).
@@ -440,9 +442,9 @@ q:before,q:after {
   Add Some useful classes 
  */
 
-.hidden,[hidden] {
-  display:none!important
-}
+// .hidden,[hidden] {
+//   display:none!important
+// }
 .none {
   display:none
 }
