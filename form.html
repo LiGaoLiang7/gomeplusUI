@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/segment.css">
     <link rel="stylesheet" href="./css/label.css">
     <link rel="stylesheet" href="./css/checkbox.css">
+    <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/dropdown.css">
     <link rel="stylesheet" href="./css/transition.css">
 </head>
@@ -459,6 +460,43 @@
             </div>
         </div>
     </div>
+    <div class="ui attached segment">
+        <p>Multiple selection</p>
+        <select name="skills" multiple="" class="ui fluid dropdown normal-max">
+            <option value="">Skills</option>
+            <option value="angular">Angular</option>
+            <option value="css">CSS</option>
+            <option value="design">Graphic Design</option>
+            <option value="ember">Ember</option>
+            <option value="html">HTML</option>
+            <option value="ia">Information Architecture</option>
+            <option value="javascript">Javascript</option>
+            <option value="mech">Mechanical Engineering</option>
+            <option value="meteor">Meteor</option>
+            <option value="node">NodeJS</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="python">Python</option>
+            <option value="rails">Rails</option>
+            <option value="react">React</option>
+            <option value="repair">Kitchen Repair</option>
+            <option value="ruby">Ruby</option>
+            <option value="ui">UI Design</option>
+            <option value="ux">User Experience</option>
+        </select>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form success">
+            <div class="field">
+                <label>E-mail</label>
+                <input type="email" placeholder="joe@schmoe.com">
+            </div>
+            <div class="ui message">
+                <div class="header">Form Completed</div>
+                <p>You're all signed up for the newsletter.</p>
+            </div>
+            <div class="ui submit button">Submit</div>
+        </div>
+    </div>
     <div class="ui bottom attached secondary segment">
         <p>This segment is on bottom</p>
     </div>
@@ -471,6 +509,10 @@
         $('.checkbox').checkbox();
         $('.ui.radio.checkbox').checkbox();
         $('.ui.dropdown').dropdown();
+        $('.ui.normal-max.dropdown')
+            .dropdown({
+                maxSelections: 5
+            });
     })
     </script>
 </body>

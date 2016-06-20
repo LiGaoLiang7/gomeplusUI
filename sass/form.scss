@@ -561,3 +561,69 @@
      top: 0%;
      left: 100%;
  }
+
+ /* On Form */
+.ui.form.success .success.message:not(:empty) {
+  display: block;
+}
+.ui.form.success .icon.success.message:not(:empty) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*--------------------
+   Types of Messages
+---------------------*/
+
+.ui.form .success.message,
+.ui.form .warning.message,
+.ui.form .error.message {
+  display: none;
+}
+
+/* Assumptions */
+.ui.form .message:first-child {
+  margin-top: 0px;
+}
+ /*--------------------
+        Success
+---------------------*/
+/* On Form */
+.ui.form.success .success.message:not(:empty) {
+  display: block;
+}
+.ui.form.success .icon.success.message:not(:empty) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*--------------------
+        Warning
+---------------------*/
+/* On Form */
+.ui.form.warning .warning.message:not(:empty) {
+  display: block;
+}
+.ui.form.warning .icon.warning.message:not(:empty) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*--------------------
+        Error
+---------------------*/
+/* On Form */
+.ui.form.error .error.message:not(:empty) {
+  display: block;
+}
+.ui.form.error .icon.error.message:not(:empty) {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
