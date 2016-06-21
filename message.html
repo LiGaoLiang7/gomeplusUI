@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Message</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/message.css">
+    <link rel="stylesheet" href="./css/icon.css">
+    <!-- message 关闭动画效果依赖transition.css -->
+    <link rel="stylesheet" href="./css/transition.css">
+</head>
+
+<body>
+    <!-- Emphasis -->
+    <div class="ui top attached secondary segment">
+        <p>This segment is on top</p>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui message">
+            <div class="header">Changes in Service </div>
+            <p>We just updated our privacy policy here to better service our customers. We recommend reviewing the changes.</p>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui message">
+            <div class="header">New Site Features </div>
+            <ul class="list">
+                <li>You can now have cover images on blog pages</li>
+                <li>Drafts will now auto-save while writing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui icon message">
+            <i class="search icon"></i>
+            <div class="content">
+                <div class="header">Have you heard about our mailing list? </div>
+                <p>Get the best news in your e-mail every day.</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui compact message">
+            <p>Get all the best inventions in your e-mail every day. Sign up now!</p>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui  message">
+            <i class="close icon"></i>
+            <div class="header">
+                Welcome back!
+            </div>
+            <p>This is a special notification which you can dismiss if you're bored with it.</p>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui positive message">
+            <i class="close icon"></i>
+            <div class="header">
+                You are eligible for a reward
+            </div>
+            <p>Go to your <b>special offers</b> page to see now.</p>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                We're sorry we can't apply that discount
+            </div>
+            <p>That offer has expired
+            </p>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui warning huge message">
+            <i class="close icon"></i>
+            <div class="header">
+                You must register before you can do that!
+            </div>
+            Visit our registration page, then try again
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui error small message">
+            <i class="close icon"></i>
+            <div class="header">
+                There was some errors with your submission
+            </div>
+            <ul class="list">
+                <li>You must include both a upper and lower case letters in your password.</li>
+                <li>You need to select your home country.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui info large message">
+            <i class="close icon"></i>
+            <div class="header">
+                Was this what you wanted?
+            </div>
+            <ul class="list">
+                <li>It's good to see you again.</li>
+                <li>Did you know it's been a while?</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ui bottom attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/transition.min.js"></script>
+    <script src="./js/api.min.js"></script>
+    <script>
+    $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
+    </script>
+</body>
+
+</html>

@@ -276,3 +276,50 @@
             transform: scale(0.9);
   }
 }
+/*--------------
+     Fade
+---------------*/
+
+/* In */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Out */
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.transition.fade.in {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+.transition.fade.out {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}

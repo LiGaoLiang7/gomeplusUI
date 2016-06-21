@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/dropdown.css">
     <link rel="stylesheet" href="./css/transition.css">
+    <link rel="stylesheet" href="./css/message.css">
 </head>
 
 <body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
@@ -490,9 +491,48 @@
                 <label>E-mail</label>
                 <input type="email" placeholder="joe@schmoe.com">
             </div>
-            <div class="ui message">
+            <div class="ui success message">
+                <i class="close icon"></i>
                 <div class="header">Form Completed</div>
                 <p>You're all signed up for the newsletter.</p>
+            </div>
+            <div class="ui submit button">Submit</div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui warning message">
+            <i class="close icon"></i>
+            <div class="header">We had some issues</div>
+            <ul class="list">
+                <li>Please enter your first name</li>
+            </ul>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui form error">
+            <div class="field">
+                <label>E-mail</label>
+                <input type="email" placeholder="joe@schmoe.com">
+            </div>
+            <div class="ui error message">
+                <i class="close icon"></i>
+                <div class="header">Action Forbidden</div>
+                <p>You can only sign up for an account once with a given e-mail address.</p>
+            </div>
+            <div class="ui submit button">Submit</div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <div class="ui small form">
+            <div class="two fields">
+                <div class="field">
+                    <label>First Name</label>
+                    <input placeholder="First Name" type="text">
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input placeholder="Last Name" type="text">
+                </div>
             </div>
             <div class="ui submit button">Submit</div>
         </div>
@@ -504,6 +544,7 @@
     <script src="./js/checkbox.min.js"></script>
     <script src="./js/dropdown.min.js"></script>
     <script src="./js/transition.min.js"></script>
+    <script src="./js/api.min.js"></script>
     <script>
     $(function() {
         $('.checkbox').checkbox();
@@ -513,6 +554,9 @@
             .dropdown({
                 maxSelections: 5
             });
+        $('.message .close').on('click', function() {
+            $(this).closest('.message').transition('fade');
+        });
     })
     </script>
 </body>
