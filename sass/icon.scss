@@ -38,7 +38,9 @@ i.icon:before {
   background: none !important;
 }
 
-/* Web Content */
+// ******************************
+//             Icons
+// ******************************
 i.icon.search:before {
   content: "\f002";
 }
@@ -62,4 +64,85 @@ i.icon.delete:before {
 }
 i.icon.world:before {
   content: "\f0ac";
+}
+i.icon.chevron.left:before {
+  content: "\f053";
+}
+i.icon.chevron.right:before {
+  content: "\f054";
+}
+i.icon.folder:before {
+  content: "\f07b";
+}
+i.icon.file:before {
+  content: "\f15b";
+}
+i.icon.file.outline:before {
+  content: "\f016";
+}
+i.icon.checkmark:before {
+  content: "\f00c";
+}
+i.icon.attention:before {
+  content: "\f06a";
+}
+// -------------------
+//         Color
+// --------------------
+i.green.icon {
+  color: #21ba45 !important;
+}
+i.inverted.green.icon {
+  color: #2ecc40 !important;
+}
+i.inverted.bordered.green.icon,
+i.inverted.circular.green.icon {
+  background-color: #21ba45 !important;
+  color: #ffffff !important;
+}
+// -------------------
+//         Sizes
+// --------------------
+i.mini.icon,
+i.mini.icons {
+  line-height: 1;
+  font-size: 0.71428571rem;
+}
+i.tiny.icon,
+i.tiny.icons {
+  line-height: 1;
+  font-size: 0.85714286rem;
+}
+i.small.icon,
+i.small.icons {
+  line-height: 1;
+  font-size: 0.92857143em;
+}
+i.icon,
+i.icons {
+  font-size: 1em;
+}
+i.large.icon,
+i.large.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 1.5em;
+}
+i.big.icon,
+i.big.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 2em;
+}
+i.huge.icon,
+i.huge.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 4em;
+}
+i.massive.icon,
+i.massive.icons {
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 8em;
 }
