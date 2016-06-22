@@ -16,7 +16,6 @@
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
-
 /*******************************
             States
 *******************************/
@@ -26,13 +25,11 @@
           backface-visibility: hidden;
   visibility: visible !important;
 }
-
 /* Hidden */
 .hidden.transition {
   display: none;
   visibility: hidden;
 }
-
 /* Visible */
 .visible.transition {
   display: block !important;
@@ -44,31 +41,24 @@
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
-
 /*******************************
           Variations
 *******************************/
-
 .looping.transition {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-
-
 /*******************************
           Transitions
 *******************************/
-
   // Some transitions adapted from Animate CSS
   // https://github.com/daneden/animate.css
 
   // Additional transitions adapted from Glide
   // by Nick Pettit - https://github.com/nickpettit/glide
-
 /*--------------
      Slide
 ---------------*/
-
 .transition.slide.in,
 .transition[class*="slide down"].in {
   -webkit-animation-name: slideInY;
@@ -276,9 +266,19 @@
             transform: scale(0.9);
   }
 }
+
 /*--------------
-     Fade
+      Fade
 ---------------*/
+
+.transition.fade.in {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+.transition.fade.out {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+}
 
 /* In */
 @-webkit-keyframes fadeIn {
@@ -297,7 +297,6 @@
     opacity: 1;
   }
 }
-
 /* Out */
 @-webkit-keyframes fadeOut {
   0% {
@@ -314,12 +313,4 @@
   100% {
     opacity: 0;
   }
-}
-.transition.fade.in {
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-}
-.transition.fade.out {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
 }
