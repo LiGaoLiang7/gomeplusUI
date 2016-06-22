@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dimmer 遮罩</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/transition.css">
+    <link rel="stylesheet" href="./css/icon.css">
+    <link rel="stylesheet" href="./css/dimmer.css">
+    <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<body style="width:90%; margin-top:10px; padding-bottom:10px; margin-right:auto; margin-left:auto;">
+    <div class="ui top attached secondary segment">
+        <p>This segment is on top</p>
+    </div>
+    <div class="ui attached segment include-dimmer">
+        <p>&lt;!-- Dimmer Generated Automatically No Need to Include --&gt;</p>
+        <h3 class="ui header">Overlayable Section</h3>
+        <div class="ui small images">
+            <img src="http://placekitten.com/200/200">
+        </div>
+        <p>http://placekitten.com/200/200</p>
+        <div class="ui dimmer"></div>
+    </div>
+    <div class="ui attached segment include-dimmer">
+        <h2 class="ui header">Content dimmer</h2>
+        <p>A dimmer can display content</p>
+        <div class="ui small images">
+            <img src="http://placekitten.com/200/200">
+        </div>
+        <p>http://placekitten.com/200/200</p>
+        <div class="ui dimmer">
+            <div class="content">
+                <div class="center">
+                    <h2 class="ui inverted icon header"><i class="mail huge icon"></i>
+                    Dimmed Message!
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <h2 class="ui header">Page &amp;Dimmer</h2>
+        <p>A dimmer can display page dimmer</p>
+        <div class="ui small images">
+            <img src="http://placekitten.com/200/200">
+        </div>
+        <div class="ui button primary page-dimmer">click here</div>
+        <div class="ui dimmer page">
+            <div class="content">
+                <div class="center">
+                    <h2 class="ui inverted icon header"><i class="mail huge icon"></i>
+                    <p>Dimmed Message!</p>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui blurring segment include-dimmer">
+        <h2 class="ui header">Blurring Dimmer</h2>
+        <div class="ui small images">
+            <img src="http://placekitten.com/200/200">
+            <img src="http://placekitten.com/200/200">
+        </div>
+        <div class="ui dimmer"></div>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="ui blurring segment include-dimmer">
+        <h2 class="ui header">Blurring Inverted Dimmer</h2>
+        <div class="ui small images">
+            <img src="http://placekitten.com/200/200">
+            <img src="http://placekitten.com/200/200">
+        </div>
+        <div class="ui inverted dimmer"></div>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="ui bottom attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/transition.min.js"></script>
+    <script src="./js/dimmer.min.js"></script>
+    <script>
+    $(".include-dimmer").hover(function() {
+        $(this).dimmer('show');
+    }, function() {
+        $(this).dimmer('hide');
+    });
+    $(".page-dimmer").click(function(event) {
+        $(".dimmer.page").dimmer('show');
+    });
+    </script>
+</body>
+
+</html>

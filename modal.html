@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>modal</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
+    <link rel="stylesheet" href="./css/icon.css">
+    <link rel="stylesheet" href="./css/btn.css">
+    <link rel="stylesheet" href="./css/dimmer.css">
+    <link rel="stylesheet" href="./css/transition.css">
+    <link rel="stylesheet" href="./css/modal.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+    <div class="ui top attached secondary segment">
+        <p>This segment is on top</p>
+    </div>
+    <div class="ui attached segment">
+        <p>This segment is attached on both sides</p>
+        <div class="ui positive button btn-modal1">modal</div>
+        <div class="ui modal modal1">
+            <i class="close icon"></i>
+            <div class="header">
+                Profile Picture
+            </div>
+            <div class="image content">
+                <div class="ui medium image">
+                    <img src="http://placekitten.com/60/60">
+                </div>
+                <div class="description">
+                    <div class="ui header">We've auto-chosen a profile image for you.</div>
+                    <p>We've grabbed the following image from the <a href="" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                    <p>Is it okay to use this photo?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui black deny button">
+                    Nope
+                </div>
+                <div class="ui positive right labeled icon button">
+                    Yep, that's me
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>basic modal </p>
+        <div class="ui positive button btn-modal2">modal</div>
+        <div class="ui basic modal modal2">
+            <i class="close icon"></i>
+            <div class="header">
+                Archive Old Messages
+            </div>
+            <div class="image content center">
+                <i class="mail massive icon"></i>
+                <div class="description">
+                    <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="two fluid ui inverted buttons">
+                    <div class="ui red inverted button">
+                        <i class="remove icon"></i> No
+                    </div>
+                    <div class="ui green inverted button">
+                        <i class="email icon"></i> Yes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <p>This segment is attached on both sides</p>
+    </div>
+    <div class="ui bottom attached secondary segment">
+        <p>This segment is on bottom</p>
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/transition.min.js"></script>
+    <script src="./js/dimmer.min.js"></script>
+    <script src="./js/modal.min.js"></script>
+    <script>
+    $(function() {
+        $(".btn-modal1").click(function(event) {
+            $('.modal1').modal('show');
+        });
+        $(".btn-modal2").click(function(event) {
+            $('.modal2').modal('show');
+        });
+    })
+    </script>
+</body>
+
+</html>
