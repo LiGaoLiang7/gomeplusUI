@@ -51,22 +51,103 @@
         <div class="ui positive button btn-modal2">modal</div>
         <div class="ui basic modal modal2">
             <i class="close icon"></i>
-            <div class="header">
+            <div class="header" style="text-align:center;">
                 Archive Old Messages
             </div>
-            <div class="image content center">
-                <i class="mail massive icon"></i>
-                <div class="description">
+            <div class="content">
+                <i class="mail massive icon" style="display:block; margin:0 auto;"></i>
+                <div class="description" style="display:block; text-align:center;">
                     <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
                 </div>
             </div>
             <div class="actions">
                 <div class="two fluid ui inverted buttons">
                     <div class="ui red inverted button">
-                        <i class="remove icon"></i> No
+                        <i class="remove cancel icon"></i> No
                     </div>
                     <div class="ui green inverted button">
-                        <i class="email icon"></i> Yes
+                        <i class="checkmark icon"></i> Yes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <h2>Forcing a Choice</h2>
+        <p>You can disable a modal's dimmer from being closed by click to force a user to make a choice</p>
+        <div class="ui positive button btn-modal3">modal</div>
+        <div class="ui basic modal modal3">
+            <i class="close icon"></i>
+            <div class="header" style="text-align:center;">
+                Archive Old Messages
+            </div>
+            <div class="content">
+                <i class="mail massive icon" style="display:block; margin:0 auto;"></i>
+                <div class="description" style="display:block; text-align:center;">
+                    <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="two fluid ui inverted buttons">
+                    <div class="ui red inverted button">
+                        <i class="remove cancel icon"></i> No
+                    </div>
+                    <div class="ui green inverted button">
+                        <i class="checkmark icon"></i> Yes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <h2>Approve / Deny Callbacks</h2>
+        <p>Modals will automatically tie approve deny callbacks to any positive/approve, negative/deny or ok/cancel buttons.</p>
+        <div class="ui positive button btn-modal4">modal</div>
+        <div class="ui basic modal modal4">
+            <i class="close icon"></i>
+            <div class="header" style="text-align:center;">
+                Archive Old Messages
+            </div>
+            <div class="content">
+                <i class="mail massive icon" style="display:block; margin:0 auto;"></i>
+                <div class="description" style="display:block; text-align:center;">
+                    <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="two fluid ui inverted buttons">
+                    <div class="ui red inverted approve button">
+                        <i class="remove cancel icon"></i> No
+                    </div>
+                    <div class="ui green inverted deny button">
+                        <i class="checkmark icon"></i> Yes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui attached segment">
+        <h2>Attach events</h2>
+        <p>A modal can attach events to another element</p>
+        <div class="ui positive button btn-modal5">modal</div>
+        <div class="ui basic modal modal5 blurring">
+            <i class="close icon"></i>
+            <div class="header" style="text-align:center;">
+                Archive Old Messages
+            </div>
+            <div class="content">
+                <i class="mail massive icon" style="display:block; margin:0 auto;"></i>
+                <div class="description" style="display:block; text-align:center;">
+                    <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="two fluid ui inverted buttons">
+                    <div class="ui red inverted approve button">
+                        <i class="remove cancel icon"></i> No
+                    </div>
+                    <div class="ui green inverted deny button">
+                        <i class="checkmark icon"></i> Yes
                     </div>
                 </div>
             </div>
@@ -89,6 +170,27 @@
         });
         $(".btn-modal2").click(function(event) {
             $('.modal2').modal('show');
+        });
+        $(".btn-modal3").click(function(event) {
+            $('.modal3').modal('setting', 'closable', false).modal('show');
+        });
+        $(".btn-modal4").click(function(event) {
+            $('.modal4').modal({
+                    closable: false,
+                    blurring: false,
+                    onDeny: function() {
+                        window.alert('Wait not yet!');
+                        return false;
+                    },
+                    onApprove: function() {
+                        window.alert('Approved!');
+                    }
+                })
+                .modal('show');
+        });
+        // $('.modal5').modal('click', '.btn-modal5', 'show'); // attach events, trigger, action
+        $(".btn-modal5").click(function(event) {
+            $('.modal5').modal({blurring: true}).modal('show');
         });
     })
     </script>
