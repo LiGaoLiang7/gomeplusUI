@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>popup</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/transition.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/input.css">
+  <link rel="stylesheet" href="./css/popup.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui icon button ispopup" data-content="Add users to your feed">
+      <i class="mail icon"></i>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <h2>Specifying a trigger event</h2>
+    <p>A popup trigger event can be specified</p>
+    <div class="ui teal button" data-title="Using click events" data-content="Clicked popups will close if you click away, but not if you click inside the popup">Click Me</div>
+    <div class="ui icon input">
+      <input type="text" placeholder="Focus me..." data-content="You can use me to enter data" class="">
+      <i class="search icon"></i>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui segment" style="position: relative; width:250px; height:250px;">
+      <i class="square inverted red users icon link large" data-content="Top Left" data-position="top left" style="display:inline-block; margin:10px; color:blue; position:absolute; left:0; top:0;"></i>
+      <i class="square inverted red users icon link large" data-content="Top Center" data-position="top center" style="display:inline-block; margin:10px; color:blue; position:absolute; left:50%; top:0; margin-left:-13px;"></i>
+      <i class="square inverted red users icon link large" data-content="Top Right" data-position="top right" style="display:inline-block; margin:10px; color:blue; position:absolute; right:0; top:0;"></i>
+      <i class="square inverted red users icon link large" data-content="Right Center" data-position="right center" style="display:inline-block; margin:10px; color:blue; position:absolute; right:0; top:50%; margin-top:-13px;"></i>
+      <i class="square inverted red users icon link large" data-content="Bottom Right" data-position="bottom right" style="display:inline-block; margin:10px; color:blue; position:absolute; bottom:0; right:0;"></i>
+      <i class="square inverted red users icon link large" data-content="Bottom Center" data-position="bottom center" style="display:inline-block; margin:10px; color:blue; position:absolute; bottom:0; left:50%; margin-left: -13px;"></i>
+      <i class="square inverted red users icon link large" data-content="Bottom Left" data-position="bottom left" style="display:inline-block; margin:10px; color:blue; position:absolute; bottom:0; left:0;"></i>
+      <i class="square inverted red users icon link large" data-content="Left Center" data-position="left center" style="display:inline-block; margin:10px; color:blue; position:absolute; bottom:50%; left:0; margin-bottom: -13px;"></i>
+    </div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/transition.min.js"></script>
+  <script src="./js/popup.min.js"></script>
+  <script>
+  $(".ispopup").popup({
+    inline: true,
+    hoverable: true,
+    position: 'top left',
+    delay: {
+      show: 300,
+      hide: 300
+    }
+  });
+
+  $(".teal.button").popup({
+    on: 'click',
+    position: 'top left',
+    inline: true
+  });
+  $(".icon.input input").popup({
+    on: 'focus',
+    inline: true
+  });
+  $(".ui.segment i").popup({
+    inline: true,
+    hoverable: true,
+  });
+  </script>
+</body>
+
+</html>

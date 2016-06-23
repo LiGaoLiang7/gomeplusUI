@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>progress</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/progress.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui teal progress" data-percent="10" id="example1">
+      <div class="bar"></div>
+      <div class="label">10% Funded</div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <p>This segment is attached on both sides</p>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/progress.min.js"></script>
+  <script>
+  	$('#example1').progress();
+  </script>
+</body>
+
+</html>
