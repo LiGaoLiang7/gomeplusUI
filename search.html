@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>search</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/input.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/transition.css">
+  <link rel="stylesheet" href="./css/search.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <h2>Standard</h2>
+    <div class="ui search search-test1">
+      <input class="prompt" type="text" placeholder="Common passwords...">
+      <div class="results"></div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <h2>use addtional input types like icon</h2>
+    <div class="ui search search-test2">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Common passwords...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <h2>Category</h2>
+    <div class="ui search category search-test3">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Common passwords...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <h2>Local Search</h2>
+    <div class="ui search category search-test4">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Common passwords...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/transition.min.js"></script>
+  <script src="./js/api.min.js"></script>
+  <script src="./js/search.min.js"></script>
+  <script>
+  var content = [{
+      title: 'Andorra'
+    }, {
+      title: 'United Arab Emirates'
+    }, {
+      title: 'Afghanistan'
+    }, {
+      title: 'Antigua'
+    }, {
+      title: 'Anguilla'
+    }, {
+      title: 'Albania'
+    }, {
+      title: 'Armenia'
+    }, {
+      title: 'Netherlands Antilles'
+    }, {
+      title: 'Angola'
+    }, {
+      title: 'Argentina'
+    }, {
+      title: 'American Samoa'
+    }, {
+      title: 'Austria'
+    }, {
+      title: 'Australia'
+    }, {
+      title: 'Aruba'
+    }, {
+      title: 'Aland Islands'
+    }, {
+      title: 'Azerbaijan'
+    }, {
+      title: 'Bosnia'
+    }, {
+      title: 'Barbados'
+    }, {
+      title: 'Bangladesh'
+    }, {
+      title: 'Belgium'
+    }, {
+      title: 'Burkina Faso'
+    }, {
+      title: 'Bulgaria'
+    }, {
+      title: 'Bahrain'
+    }, {
+      title: 'Burundi'
+    }
+    // etc
+  ];
+  $('.search-test1')
+    .search({
+      apiSettings: {
+        url: '//api.github.com/search/repositories?q={query}'
+      },
+      fields: {
+        results: 'items',
+        title: 'name',
+        url: 'html_url'
+      },
+      minCharacters: 3
+    });
+  $('.search-test2,.search-test3')
+    .search({
+      type: 'category',
+      minCharacters: 3,
+      apiSettings: {
+        onResponse: function(githubResponse) {
+          var
+            response = {
+              results: {}
+            };
+          // translate GitHub API response to work with search
+          $.each(githubResponse.items, function(index, item) {
+            var
+              language = item.language || 'Unknown',
+              maxResults = 8;
+            if (index >= maxResults) {
+              return false;
+            }
+            // create new language category
+            if (response.results[language] === undefined) {
+              response.results[language] = {
+                name: language,
+                results: []
+              };
+            }
+            // add result to category
+            response.results[language].results.push({
+              title: item.name,
+              description: item.description,
+              url: item.html_url
+            });
+          });
+          return response;
+        },
+        url: '//api.github.com/search/repositories?q={query}'
+      }
+    });
+    /* local sear */
+    $('.search-test4').search({
+    	source : content
+    });
+  </script>
+</body>
+
+</html>

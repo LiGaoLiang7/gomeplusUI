@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/segment.css">
   <link rel="stylesheet" href="./css/progress.css">
+  <link rel="stylesheet" href="./css/btn.css">
 </head>
 
 <body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
@@ -14,13 +15,49 @@
     <p>This segment is on top</p>
   </div>
   <div class="ui attached segment">
-    <div class="ui teal progress" data-percent="10" id="example1">
+    <div class="ui progress" data-percent="10" id="example1">
       <div class="bar"></div>
       <div class="label">10% Funded</div>
     </div>
   </div>
   <div class="ui attached segment">
-    <p>This segment is attached on both sides</p>
+    <div class="ui progress small" data-percent="10" id="example2">
+      <div class="bar">
+        <div class="progress"></div>
+        <!--add process-->
+      </div>
+      <div class="label">10% Funded</div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <h2>indicating</h2>
+    <div class="ui indicating progress small" data-percent="10" id="example3">
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="label">10% Funded</div>
+    </div>
+    <button class="ui button primary small btn1">increment</button>
+  </div>
+  <div class="ui attached segment">
+    <h2>Initializing with Metadata</h2>
+    <div class="ui indicating progress" id="example4" data-value="0" data-total="20">
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="label">Adding Photos</div>
+    </div>
+    <button class="ui button primary small btn2">total : 20</button>
+  </div>
+  <div class="ui attached segment">
+    <h2>Adding Custom Labels</h2>
+    <div class="ui teal progress indicating" id="example5" data-value="0" data-total="10">
+      <div class="bar">
+        <div class="progress"></div>
+      </div>
+      <div class="label">Adding Photos</div>
+    </div>
+    <button class="ui button primary btn3">total : 10</button>
   </div>
   <div class="ui bottom attached secondary segment">
     <p>This segment is on bottom</p>
@@ -28,8 +65,42 @@
   <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
   <script src="./js/progress.min.js"></script>
   <script>
-  	$('#example1').progress();
+  $('#example1').progress();
+  $('#example2').progress({
+    percent: 99
+  });
+  $('.btn1').click(function(event) {
+    $('#example3').progress('increment');
+  });
+  $('.btn2').click(function(event) {
+    $('#example4').progress('increment');
+  });
+  $('#example5').progress({
+    text: {
+      active: 'Adding {value} of {total} photos',
+      success: '{total} Photos Uploaded!'
+    }
+  });
+
+  $('.btn3').click(function(event) {
+    $('#example5').progress('increment');
+  });
   </script>
+  <!-- 
+  text : {
+  active  : false,
+  error   : false,
+  success : false,
+  warning : false,
+  percent : '{percent}%',
+  ratio   : '{value} of {total}'
+	}
+	metadata: {
+  percent : 'percent',
+  total   : 'total',
+  value   : 'value'
+	}    
+	-->
 </body>
 
 </html>
