@@ -511,3 +511,185 @@ Floated Menu / Item
   background-color: transparent !important;
   color: rgba(40, 40, 40, 0.3);
 }
+
+/* Top */
+.ui[class*="top attached"].menu {
+  bottom: 0px;
+  margin-bottom: 0em;
+  top: 0px;
+  margin-top: 1rem;
+  border-radius: 0.28571429rem 0.28571429rem 0em 0em;
+}
+.ui.menu[class*="top attached"]:first-child {
+  margin-top: 0em;
+}
+
+/* Bottom */
+.ui[class*="bottom attached"].menu {
+  bottom: 0px;
+  margin-top: 0em;
+  top: 0px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
+  border-radius: 0em 0em 0.28571429rem 0.28571429rem;
+}
+.ui[class*="bottom attached"].menu:last-child {
+  margin-bottom: 0em;
+}
+
+/* Attached Menu Item */
+.ui.top.attached.menu > .item:first-child {
+  border-radius: 0.28571429rem 0em 0em 0em;
+}
+.ui.bottom.attached.menu > .item:first-child {
+  border-radius: 0em 0em 0em 0.28571429rem;
+}
+
+/* Tabular Attached */
+.ui.attached.menu:not(.tabular) {
+  border: 1px solid #d4d4d5;
+}
+.ui.attached.inverted.menu {
+  border: none;
+}
+.ui.attached.tabular.menu {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+/*--------------
+     Tabular
+---------------*/
+
+.ui.tabular.menu {
+  border-radius: 0em;
+  box-shadow: none !important;
+  border: none;
+  background: none transparent;
+  border-bottom: 1px solid #d4d4d5;
+}
+.ui.tabular.fluid.menu {
+  width: calc(100% +  2px ) !important;
+}
+.ui.tabular.menu .item {
+  background: transparent;
+  border-bottom: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 2px solid transparent;
+  padding: 0.92857143em 1.42857143em;
+  color: rgba(0, 0, 0, 0.87);
+}
+.ui.tabular.menu .item:before {
+  display: none;
+}
+
+/* Hover */
+.ui.tabular.menu .item:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Active */
+.ui.tabular.menu .active.item {
+  background: none #ffffff;
+  color: rgba(0, 0, 0, 0.95);
+  border-top-width: 1px;
+  border-color: #d4d4d5;
+  font-weight: bold;
+  margin-bottom: -1px;
+  box-shadow: none;
+  border-radius: 0.28571429rem 0.28571429rem 0px 0px !important;
+}
+
+/* Coupling with segment for attachment */
+.ui.tabular.menu + .attached:not(.top).segment,
+.ui.tabular.menu + .attached:not(.top).segment + .attached:not(.top).segment {
+  border-top: none;
+  margin: 0px;
+  width: 100%;
+}
+.top.attached.segment + .ui.bottom.tabular.menu {
+  position: relative;
+  width: calc(100% +  2px );
+  left: -1px;
+}
+
+/* Bottom Vertical Tabular */
+.ui.bottom.tabular.menu {
+  background: none transparent;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-top: 1px solid #d4d4d5;
+}
+.ui.bottom.tabular.menu .item {
+  background: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: none;
+}
+.ui.bottom.tabular.menu .active.item {
+  background: none #ffffff;
+  color: rgba(0, 0, 0, 0.95);
+  border-color: #d4d4d5;
+  margin: -1px 0px 0px 0px;
+  border-radius: 0px 0px 0.28571429rem 0.28571429rem !important;
+}
+
+/* Vertical Tabular (Left) */
+.ui.vertical.tabular.menu {
+  background: none transparent;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-right: 1px solid #d4d4d5;
+}
+.ui.vertical.tabular.menu .item {
+  background: none;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-right: none;
+}
+.ui.vertical.tabular.menu .active.item {
+  background: none #ffffff;
+  color: rgba(0, 0, 0, 0.95);
+  border-color: #d4d4d5;
+  margin: 0px -1px 0px 0px;
+  border-radius: 0.28571429rem 0px 0px 0.28571429rem !important;
+}
+
+/* Vertical Right Tabular */
+.ui.vertical.right.tabular.menu {
+  background: none transparent;
+  border-radius: 0em;
+  box-shadow: none !important;
+  border-bottom: none;
+  border-right: none;
+  border-left: 1px solid #d4d4d5;
+}
+.ui.vertical.right.tabular.menu .item {
+  background: none;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-left: none;
+}
+.ui.vertical.right.tabular.menu .active.item {
+  background: none #ffffff;
+  color: rgba(0, 0, 0, 0.95);
+  border-color: #d4d4d5;
+  margin: 0px 0px 0px -1px;
+  border-radius: 0px 0.28571429rem 0.28571429rem 0px !important;
+}
+
+/* Dropdown */
+.ui.tabular.menu .active.dropdown.item {
+  margin-bottom: 0px;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: none;
+}
