@@ -5,9 +5,11 @@
   <br> 3.在项目使用public.css里边用@import引入需要的控件化模块,上线的环境不需要控件类的css,与上线环境解耦；
   <br> 4.控件上使用控件命名，私有化的CSS样式使用统一的父类 防止私有样式和控件的样式互相污染；
   <br> 5.控件化到组件化再到页面， 从设计稿提取控件化元素，使用控件拼成小组件，再成大组件，最后拼合成页面，使用jade的include和extend方法拼合页面，保证jade模块文件代码量少；
-  <br> 6.用缓存与CSS文件数，每个页面会引用public.css 和自己页面私有的module.
+  <br> 6.用缓存与CSS文件数，每个页面会引用public.css 和自己页面私有的page层的模块.
   <br>
-  <h3>包含的文件</h3> reset样式 normalize
+	<p>下列拆分成小控件的SCSS文件，只需将控件的样式文件用@import的方法引入public中即可，最后global.scss会定义控件的颜色全局变量可以按需要修改；normalize.css为reset样式表。</p>
+
+  <h3>gomeplus包含的文件</h3> reset样式 normalize
   <h4>作为控件的元素：</h4>
   <ul>
     <li>button</li>
