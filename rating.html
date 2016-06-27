@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>rating</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/rating.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <h2>Basic rating</h2>
+    <p>disabled</p>
+    <div class="ui star rating rating2 disabled" data-rating="4" data-max-rating="10"></div>
+  </div>
+  <div class="ui attached segment">
+    <h2>star rating</h2>
+    <p>enabled</p>
+    <div class="ui star rating rating3" data-rating="3" data-max-rating="10"></div>
+  </div>
+  <div class="ui attached segment">
+    <h2>heart rating</h2>
+    <p>enabled</p>
+    <div class="ui heart rating rating4" data-rating="3" data-max-rating="10"></div>
+  </div>
+  <div class="ui attached segment">
+    <h2>heart rating</h2>
+    <p>disabled</p>
+    <div class="ui heart rating rating5 disabled" data-rating="4" data-max-rating="10"></div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/rating.min.js"></script>
+  <script>
+  rating("rating2");
+  rating("rating3");
+  rating("rating4");
+  rating("rating5");
+  </script>
+</body>
+
+</html>
