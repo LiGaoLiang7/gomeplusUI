@@ -44,6 +44,6 @@
     <li>transition</li>
   </ul>
   <h4>semantic-ui中下列的没有添加</h4>
-  <h4>元素</h4> 容器 ontainer 国旗 flag 加载器 loader 列表 list 图片 image 遮罩 reveal 步骤 step
-  <h4>组合</h4> 网格 grid
-  <h4>模块中没添加的：</h4> nag 本质是个message sidebar Sticky embed 嵌入youtube的视频 shape 形状
+  <h4>元素</h4> 容器 ontainer、 国旗 flag、 加载器 loader、 列表 list、 图片 image、 遮罩 reveal、 步骤 step；
+  <h4>组合</h4> 网格 grid；
+  <h4>模块中没添加的：</h4> nag 本质是个message、 sidebar、 Sticky、 embed 嵌入youtube的视频、 shape 形状；
