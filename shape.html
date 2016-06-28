@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>shape</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/shape.css">
+</head>
+
+<body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui shape shape1">
+      <div class="sides">
+        <div class="side active">
+          <div class="ui card">
+            <div class="image">
+              <img src="http://fpoimg.com/290x290">
+            </div>
+            <div class="content">
+              <a class="header">Kristy</a>
+              <div class="meta">
+                <span class="date">Joined in 2013</span>
+              </div>
+              <div class="description">Kristy is an art director living in New York. </div>
+            </div>
+            <div class="extra content">
+              <a><i class="user icon"></i> 22 Friends </a>
+            </div>
+          </div>
+        </div>
+        <div class="side">
+          <div class="ui card">
+            <div class="image">
+              <img src="http://fpoimg.com/290x290">
+            </div>
+            <div class="content">
+              <div class="header">Elyse</div>
+              <div class="meta">
+                <a>Coworker</a>
+              </div>
+              <div class="description">Elyse is a copywriter working in New York. </div>
+            </div>
+            <div class="extra content">
+              <span class="right floated">Joined in 2014 </span>
+              <span><i class="user icon"></i> 151 Friends </span>
+            </div>
+          </div>
+        </div>
+      
+      <div class="side">
+        <div class="ui card">
+          <div class="image">
+            <img src="http://fpoimg.com/290x290">
+          </div>
+          <div class="content">
+            <div class="header">Matt Giampietro</div>
+            <div class="meta">
+              <a>Friends</a>
+            </div>
+            <div class="description">Matthew is an interior designer living in New York. </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">Joined in 2013 </span>
+            <span><i class="user icon"></i> 75 Friends </span>
+          </div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="ui card">
+          <div class="image">
+            <img src="http://fpoimg.com/290x290">
+          </div>
+          <div class="content">
+            <div class="header">Elyse</div>
+            <div class="meta">
+              <a>Coworker</a>
+            </div>
+            <div class="description">Elyse is a copywriter working in New York. </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">Joined in 2014 </span>
+            <span><i class="user icon"></i> 151 Friends </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="ui attached segment" style="text-align:center;">
+    <div style="margin-top:2.3rem;"></div>
+    <div class="ui basic small buttons">
+      <button class="ui button">up</button>
+      <button class="ui button">down</button>
+      <button class="ui button">left</button>
+      <button class="ui button">right</button>
+      <button class="ui button">over</button>
+      <button class="ui button">back</button>
+    </div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+    <script src="./js/shape.min.js"></script>
+    <script>
+    $("button").click(function(event) {
+      var action = "flip " + event.target.innerHTML;
+      $(".shape1").shape(action);
+    });
+    </script>
+</body>
+
+</html>
