@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>use api</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/btn.css">
+</head>
+
+<body style="width:80%; margin:20px auto;">
+  <h2>测试</h2>
+  <ui class="devider"></ui>
+  <button class="ui primary mini button">执行</button>
+  
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/api.min.js"></script>
+  <script>
+  //wp api 的链接地址接口
+  $.fn.api.settings.api = {
+    'posts': 'http://lefeier.net/?wpapi=get_posts&dev=1&'
+  }
+
+  $(".ui.button").api({
+    action: 'posts',
+    on: 'click',
+    onSuccess: function(res){
+    	res.posts.map(function(post){
+    		console.log(post.title);
+    		console.log(post.excerpt);
+    	})
+    }
+  })
+  </script>
+</body>
+
+</html>
