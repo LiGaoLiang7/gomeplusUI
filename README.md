@@ -12,40 +12,42 @@
   <h3>gomeplus包含的文件</h3> reset样式 normalize
   <h4>作为控件的元素：</h4>
   <ul>
-    <li>button</li>
-    <li>divider</li>
-    <li>header</li>
-    <li>input </li>
-    <li>label</li>
-    <li>segment</li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/btn.html" target="_blank">button</a></li>
+    <li><a href="#" target="_blank">divider 提供分割</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/header.html" target="_blank">header</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/input.html" target="_blank">input</a> </li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/label.html" target="_blank">label</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/segment.html" target="_blank">segment</a></li>
   </ul>
   <h4>视图中处理的</h4>
   <ul>
-    <li>card</li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/card.html" target="_blank">card</a></li>
   </ul>
   <h4>作为控件的组合：</h4>
   <ul>
-    <li>breadcrumb</li>
-    <li>form</li>
-    <li>menu</li>
-    <li>message</li>
-    <li>table</li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/breadcrumb.html" target="_blank">breadcrumb</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/form.html" target="_blank">form</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/menu.html" target="_blank">menu</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/message.html" target="_blank">message</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/table.html" target="_blank">table</a></li>
   </ul>
   <h4>模块中的控件</h4>
   <ul>
-    <li>accordion</li>
-    <li>checkbox</li>
-    <li>dimmer</li>
-    <li>dropdown </li>
-    <li>modal</li>
-    <li>popup</li>
-    <li>progress</li>
-    <li>rating</li>
-    <li>search</li>
-    <li>tab</li>
-    <li>transition</li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/accordion.html" target="_blank">accordion</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/checkbox.html" target="_blank">checkbox</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/dimmer.html" target="_blank">dimmer</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/dropdown.html" target="_blank">dropdown</a> </li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/modal.html" target="_blank">modal</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/popup.html" target="_blank">popup</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/progress.html" target="_blank">progress</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/rating.html" target="_blank">rating</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/search.html" target="_blank">search</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/tab.html" target="_blank">tab</a></li>
+    <li><a href="#" target="_blank">transition 提供动画</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/shape.html" target="_blank">shape</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/slide.html" target="_blank">slide</a></li>
   </ul>
   <h4>semantic-ui中下列的没有添加</h4>
   <h4>元素</h4> 容器 ontainer、 国旗 flag、 加载器 loader、 列表 list、 图片 image、 遮罩 reveal、 步骤 step；
   <h4>组合</h4> 网格 grid；
-  <h4>模块中没添加的：</h4> nag 本质是个message、 sidebar、 Sticky、 embed 嵌入youtube的视频、 shape 形状；
+  <h4>模块中没添加的：</h4> nag 本质是个message、 sidebar、 Sticky、 embed 嵌入youtube的视频；
