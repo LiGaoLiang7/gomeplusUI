@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>slide</title>
+  <style>
+  body {
+    padding: 0;
+    width: 80%;
+    
+
+  }
+  
+  .shuff {
+    position: relative;
+    overflow: hidden;
+    height: 336px;
+    width: 730px;
+    margin: 0 auto;
+  }
+  
+  .shuff .slidebox {
+    position: absolute;
+    top: 0;
+    left: -730px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .shuff .slidebox.transition {
+    transition: left .3s ease-in-out 0s;
+    -webkit-transition: left .3s ease-in-out 0s;
+  }
+  
+  .shuff .slidebox.transition.nonetransition {
+    transition: none;
+  }
+  
+  .shuff .slidebox::after {
+    content: "";
+    display: block;
+    clear: left;
+    visibility: hidden;
+    line-height: 336px;
+  }
+  
+  .shuff .slidebox li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+    list-style: none;
+  }
+  
+  .shuff .slidebox li>a {
+    display: block;
+  }
+  
+  .shuff .slidebox li>a>img {
+    display: block;
+  }
+  
+  .shuff .ctrlbox {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+  
+  .shuff .ctrlbox span,
+  .shuff .flip {
+    background-image: url(./image/banner.png);
+  }
+  
+  .shuff .ctrlbox span {
+    margin: 0 5px;
+    padding: 5px;
+    display: inline-block;
+    width: 5px;
+    height: 12px;
+    cursor: pointer;
+    color: #fff;
+    background-position: 0px -3px;
+  }
+  
+  .shuff .ctrlbox span.active,
+  .shuff .ctrlbox span:hover {
+    background-position: -19px -3px;
+  }
+  
+  .shuff .flip {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    display: block;
+    width: 37px;
+    height: 65px;
+    display: block;
+    background-color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .shuff .flip.prev {
+    visibility: hidden;
+    left: 0;
+    background-position: 0px -18px;
+  }
+  
+  .shuff .flip.prev:hover {
+    background-position: 0px -88px;
+  }
+  
+  .shuff .flip.next {
+    visibility: hidden;
+    right: 0;
+    background-position: 0px -167px
+  }
+  
+  .shuff .flip.next:hover {
+    background-position: 0px -237px
+  }
+  
+  .shuff:hover .flip {
+    visibility: visible;
+    /* 悬停的时候显示翻页 */
+  }
+  </style>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+</head>
+
+<body style="margin:0 auto; min-width:780px;">
+  <div class="ui top attached secondary segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <div class="shuff">
+      <ul class="slidebox transition" id="topShuff">
+        <li>
+          <a href="#" title="主题1"><img src="./image/aaa.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题2"><img src="./image/bbb.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题3"><img src="./image/ccc.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题4"><img src="./image/ddd.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题5"><img src="./image/eee.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题6"><img src="./image/fff.jpg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#" title="主题7"><img src="./image/ggg.jpg" alt="" /></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="./js/plug/slideSeven.min.js"></script>
+  <script>
+  window.onload = function() {
+    var shuff = new Slide('topShuff', true, true, true);
+    shuff.init();
+  }
+  </script>
+</body>
+
+</html>
