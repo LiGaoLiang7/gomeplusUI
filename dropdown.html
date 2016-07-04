@@ -91,7 +91,7 @@
   </div>
   <div class="ui attached segment">
     <p>A search selection dropdown can allow a user to search through a large list of choices</p>
-    <div class="ui search selection dropdown">
+    <div class="ui search selection dropdown search-dropdown">
       <input type="hidden" name="country">
       <i class="dropdown icon"></i>
       <div class="default text">Select Country</div>
@@ -488,6 +488,7 @@
     <p style="line-height:100px;">This ssegment is on bottom</p>
   </div>
   <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/api.min.js"></script>
   <script src="./js/transition.min.js"></script>
   <script src="./js/dropdown.min.js"></script>
   <!--  MultiLinkageSelect  -->
@@ -515,14 +516,19 @@
   });
   </script>
   <script>
-  $('.ui.normal-max.dropdown')
-    .dropdown({
-      maxSelections: 5
+  $(function() {
+    $('.ui.normal-max.dropdown')
+      .dropdown({
+        maxSelections: 5
+      });
+    $('.multiple.search.selection.dropdown.allow-addtion').dropdown({
+      allowAdditions: true
     });
-  $('.multiple.search.selection.dropdown.allow-addtion').dropdown({
-    allowAdditions: true
+    $(".ui.dropdown").not("#location_select .multiSelect").dropdown();
+
+    $(".ui.dropdown").dropdown();
+    
   });
-  $(".ui.dropdown").not("#location_select .multiSelect").dropdown(); // it change dom bitch
   </script>
 </body>
 
