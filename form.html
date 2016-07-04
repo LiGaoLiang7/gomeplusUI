@@ -2,563 +2,582 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Forms</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/form.css">
-    <link rel="stylesheet" href="./css/btn.css">
-    <link rel="stylesheet" href="./css/segment.css">
-    <link rel="stylesheet" href="./css/label.css">
-    <link rel="stylesheet" href="./css/checkbox.css">
-    <link rel="stylesheet" href="./css/icon.css">
-    <link rel="stylesheet" href="./css/dropdown.css">
-    <link rel="stylesheet" href="./css/transition.css">
-    <link rel="stylesheet" href="./css/message.css">
+  <meta charset="UTF-8">
+  <title>Forms</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/form.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/label.css">
+  <link rel="stylesheet" href="./css/checkbox.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/dropdown.css">
+  <link rel="stylesheet" href="./css/transition.css">
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/input.css">
+  <link rel="stylesheet" href="./css/flatpickr.min.css">
+  <!-- <link rel="stylesheet" href="./css/flatpickr.material_green.min.css"> -->
 </head>
 
 <body style="width:80%; margin-top:10px; margin-left:auto; margin-right:auto; padding-bottom:10px;">
-    <div class="ui top attached segment">
-        <p>This segment is on top</p>
-    </div>
-    <div class="ui attached segment">
-        <form class="ui form">
-            <div class="field">
-                <label>First Name</label>
-                <input type="text" name="first-name" placeholder="First Name">
-                <div class="ui below pointing basic red label" style="margin-top: 5px;">Please enter a value! </div>
-            </div>
-            <div class="field">
-                <label>Last Name</label>
-                <input type="text" name="last-name" placeholder="Last Name">
-            </div>
-            <div class="field">
-                <div class="ui checkbox">
-                    <input type="checkbox" tabindex="0" class="">
-                    <label>I agree to the Terms and Conditions</label>
-                </div>
-            </div>
-            <button class="ui button primary" type="submit">Submit</button>
-        </form>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="fields">
-                <div class="field">
-                    <label>First name</label>
-                    <input type="text" placeholder="First Name">
-                </div>
-                <div class="field">
-                    <label>Middle name</label>
-                    <input type="text" placeholder="Middle Name">
-                </div>
-                <div class="field">
-                    <label>Last name</label>
-                    <input type="text" placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="three fields">
-                <div class="field">
-                    <label>First name</label>
-                    <input type="text" placeholder="First Name">
-                </div>
-                <div class="field">
-                    <label>Middle name</label>
-                    <input type="text" placeholder="Middle Name">
-                </div>
-                <div class="field">
-                    <label>Last name</label>
-                    <input type="text" placeholder="Last Name">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="field">
-                <label>User Input</label>
-                <input type="text" placeholder="A field is a form element containing a label and an input">
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="inline fields">
-                <div class="eight wide field">
-                    <label>Name</label>
-                    <input type="text" placeholder="First Name">
-                </div>
-                <div class="three wide field">
-                    <input type="text" placeholder="Middle Name">
-                </div>
-                <div class="five wide field">
-                    <input type="text" placeholder="Last Name">
-                    <div class="ui left pointing basic green label" style="margin-top: 5px;">Please enter a name!</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="field">
-                <label>Text</label>
-                <textarea style="margin-top: 0px; margin-bottom: 0px;"></textarea>
-                <!-- define max-height and min-height -->
-            </div>
-            <div class="field">
-                <label>Short Text</label>
-                <textarea rows="2" style="margin-top: 0px; margin-bottom: 0px;"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="inline field">
-                <div class="ui checkbox">
-                    <input type="checkbox" tabindex="0" class="hidden">
-                    <label>Checkbox</label>
-                </div>
-                <div class="ui slider checkbox">
-                    <input type="checkbox" tabindex="0" class="hidden">
-                    <label>Slider</label>
-                </div>
-                <div class="ui toggle checkbox">
-                    <input type="checkbox" tabindex="0" class="hidden">
-                    <label>Toggle</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ui attached segment">
+  <div class="ui top attached segment">
+    <p>This segment is on top</p>
+  </div>
+  <div class="ui attached segment">
+    <form class="ui form">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" name="first-name" placeholder="First Name">
+        <div class="ui below pointing basic red label" style="margin-top: 5px;">Please enter a value! </div>
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" name="last-name" placeholder="Last Name">
+      </div>
+      <div class="field">
         <div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>Label</label>
+          <input type="checkbox" tabindex="0" class="">
+          <label>I agree to the Terms and Conditions</label>
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="inline fields">
-                <label for="fruit">Select your favorite fruit:</label>
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
-                        <label>Apples</label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="fruit" tabindex="0" class="hidden">
-                        <label>Oranges</label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="fruit" tabindex="0" class="hidden">
-                        <label>Pears</label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input type="radio" name="fruit" tabindex="0" class="hidden">
-                        <label>Grapefruit</label>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <button class="ui button primary" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="fields">
+        <div class="field">
+          <label>First name</label>
+          <input type="text" placeholder="First Name">
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="field">
-                <label>Country</label>
-                <select class="ui search dropdown fluid">
-                    <option value="">select multiple select search in dropdown.html</option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="AX">Åland Islands</option>
-                    <option value="AL">Albania</option>
-                    <option value="DZ">Algeria</option>
-                    <option value="AS">American Samoa</option>
-                    <option value="AD">Andorra</option>
-                    <option value="AO">Angola</option>
-                    <option value="AI">Anguilla</option>
-                    <option value="AQ">Antarctica</option>
-                    <option value="AG">Antigua and Barbuda</option>
-                    <option value="AR">Argentina</option>
-                    <option value="AM">Armenia</option>
-                    <option value="AW">Aruba</option>
-                    <option value="AU">Australia</option>
-                    <option value="AT">Austria</option>
-                    <option value="AZ">Azerbaijan</option>
-                    <option value="BS">Bahamas</option>
-                    <option value="BH">Bahrain</option>
-                    <option value="BD">Bangladesh</option>
-                    <option value="BB">Barbados</option>
-                    <option value="BY">Belarus</option>
-                    <option value="BE">Belgium</option>
-                    <option value="BZ">Belize</option>
-                    <option value="BJ">Benin</option>
-                    <option value="BM">Bermuda</option>
-                    <option value="BT">Bhutan</option>
-                    <option value="BO">Bolivia, Plurinational State of</option>
-                    <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-                    <option value="BA">Bosnia and Herzegovina</option>
-                    <option value="BW">Botswana</option>
-                    <option value="BV">Bouvet Island</option>
-                    <option value="BR">Brazil</option>
-                    <option value="IO">British Indian Ocean Territory</option>
-                    <option value="BN">Brunei Darussalam</option>
-                    <option value="BG">Bulgaria</option>
-                    <option value="BF">Burkina Faso</option>
-                    <option value="BI">Burundi</option>
-                    <option value="KH">Cambodia</option>
-                    <option value="CM">Cameroon</option>
-                    <option value="CA">Canada</option>
-                    <option value="CV">Cape Verde</option>
-                    <option value="KY">Cayman Islands</option>
-                    <option value="CF">Central African Republic</option>
-                    <option value="TD">Chad</option>
-                    <option value="CL">Chile</option>
-                    <option value="CN">China</option>
-                    <option value="CX">Christmas Island</option>
-                    <option value="CC">Cocos (Keeling) Islands</option>
-                    <option value="CO">Colombia</option>
-                    <option value="KM">Comoros</option>
-                    <option value="CG">Congo</option>
-                    <option value="CD">Congo, the Democratic Republic of the</option>
-                    <option value="CK">Cook Islands</option>
-                    <option value="CR">Costa Rica</option>
-                    <option value="CI">Côte d'Ivoire</option>
-                    <option value="HR">Croatia</option>
-                    <option value="CU">Cuba</option>
-                    <option value="CW">Curaçao</option>
-                    <option value="CY">Cyprus</option>
-                    <option value="CZ">Czech Republic</option>
-                    <option value="DK">Denmark</option>
-                    <option value="DJ">Djibouti</option>
-                    <option value="DM">Dominica</option>
-                    <option value="DO">Dominican Republic</option>
-                    <option value="EC">Ecuador</option>
-                    <option value="EG">Egypt</option>
-                    <option value="SV">El Salvador</option>
-                    <option value="GQ">Equatorial Guinea</option>
-                    <option value="ER">Eritrea</option>
-                    <option value="EE">Estonia</option>
-                    <option value="ET">Ethiopia</option>
-                    <option value="FK">Falkland Islands (Malvinas)</option>
-                    <option value="FO">Faroe Islands</option>
-                    <option value="FJ">Fiji</option>
-                    <option value="FI">Finland</option>
-                    <option value="FR">France</option>
-                    <option value="GF">French Guiana</option>
-                    <option value="PF">French Polynesia</option>
-                    <option value="TF">French Southern Territories</option>
-                    <option value="GA">Gabon</option>
-                    <option value="GM">Gambia</option>
-                    <option value="GE">Georgia</option>
-                    <option value="DE">Germany</option>
-                    <option value="GH">Ghana</option>
-                    <option value="GI">Gibraltar</option>
-                    <option value="GR">Greece</option>
-                    <option value="GL">Greenland</option>
-                    <option value="GD">Grenada</option>
-                    <option value="GP">Guadeloupe</option>
-                    <option value="GU">Guam</option>
-                    <option value="GT">Guatemala</option>
-                    <option value="GG">Guernsey</option>
-                    <option value="GN">Guinea</option>
-                    <option value="GW">Guinea-Bissau</option>
-                    <option value="GY">Guyana</option>
-                    <option value="HT">Haiti</option>
-                    <option value="HM">Heard Island and McDonald Islands</option>
-                    <option value="VA">Holy See (Vatican City State)</option>
-                    <option value="HN">Honduras</option>
-                    <option value="HK">Hong Kong</option>
-                    <option value="HU">Hungary</option>
-                    <option value="IS">Iceland</option>
-                    <option value="IN">India</option>
-                    <option value="ID">Indonesia</option>
-                    <option value="IR">Iran, Islamic Republic of</option>
-                    <option value="IQ">Iraq</option>
-                    <option value="IE">Ireland</option>
-                    <option value="IM">Isle of Man</option>
-                    <option value="IL">Israel</option>
-                    <option value="IT">Italy</option>
-                    <option value="JM">Jamaica</option>
-                    <option value="JP">Japan</option>
-                    <option value="JE">Jersey</option>
-                    <option value="JO">Jordan</option>
-                    <option value="KZ">Kazakhstan</option>
-                    <option value="KE">Kenya</option>
-                    <option value="KI">Kiribati</option>
-                    <option value="KP">Korea, Democratic People's Republic of</option>
-                    <option value="KR">Korea, Republic of</option>
-                    <option value="KW">Kuwait</option>
-                    <option value="KG">Kyrgyzstan</option>
-                    <option value="LA">Lao People's Democratic Republic</option>
-                    <option value="LV">Latvia</option>
-                    <option value="LB">Lebanon</option>
-                    <option value="LS">Lesotho</option>
-                    <option value="LR">Liberia</option>
-                    <option value="LY">Libya</option>
-                    <option value="LI">Liechtenstein</option>
-                    <option value="LT">Lithuania</option>
-                    <option value="LU">Luxembourg</option>
-                    <option value="MO">Macao</option>
-                    <option value="MK">Macedonia, the former Yugoslav Republic of</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="MW">Malawi</option>
-                    <option value="MY">Malaysia</option>
-                    <option value="MV">Maldives</option>
-                    <option value="ML">Mali</option>
-                    <option value="MT">Malta</option>
-                    <option value="MH">Marshall Islands</option>
-                    <option value="MQ">Martinique</option>
-                    <option value="MR">Mauritania</option>
-                    <option value="MU">Mauritius</option>
-                    <option value="YT">Mayotte</option>
-                    <option value="MX">Mexico</option>
-                    <option value="FM">Micronesia, Federated States of</option>
-                    <option value="MD">Moldova, Republic of</option>
-                    <option value="MC">Monaco</option>
-                    <option value="MN">Mongolia</option>
-                    <option value="ME">Montenegro</option>
-                    <option value="MS">Montserrat</option>
-                    <option value="MA">Morocco</option>
-                    <option value="MZ">Mozambique</option>
-                    <option value="MM">Myanmar</option>
-                    <option value="NA">Namibia</option>
-                    <option value="NR">Nauru</option>
-                    <option value="NP">Nepal</option>
-                    <option value="NL">Netherlands</option>
-                    <option value="NC">New Caledonia</option>
-                    <option value="NZ">New Zealand</option>
-                    <option value="NI">Nicaragua</option>
-                    <option value="NE">Niger</option>
-                    <option value="NG">Nigeria</option>
-                    <option value="NU">Niue</option>
-                    <option value="NF">Norfolk Island</option>
-                    <option value="MP">Northern Mariana Islands</option>
-                    <option value="NO">Norway</option>
-                    <option value="OM">Oman</option>
-                    <option value="PK">Pakistan</option>
-                    <option value="PW">Palau</option>
-                    <option value="PS">Palestinian Territory, Occupied</option>
-                    <option value="PA">Panama</option>
-                    <option value="PG">Papua New Guinea</option>
-                    <option value="PY">Paraguay</option>
-                    <option value="PE">Peru</option>
-                    <option value="PH">Philippines</option>
-                    <option value="PN">Pitcairn</option>
-                    <option value="PL">Poland</option>
-                    <option value="PT">Portugal</option>
-                    <option value="PR">Puerto Rico</option>
-                    <option value="QA">Qatar</option>
-                    <option value="RE">Réunion</option>
-                    <option value="RO">Romania</option>
-                    <option value="RU">Russian Federation</option>
-                    <option value="RW">Rwanda</option>
-                    <option value="BL">Saint Barthélemy</option>
-                    <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
-                    <option value="KN">Saint Kitts and Nevis</option>
-                    <option value="LC">Saint Lucia</option>
-                    <option value="MF">Saint Martin (French part)</option>
-                    <option value="PM">Saint Pierre and Miquelon</option>
-                    <option value="VC">Saint Vincent and the Grenadines</option>
-                    <option value="WS">Samoa</option>
-                    <option value="SM">San Marino</option>
-                    <option value="ST">Sao Tome and Principe</option>
-                    <option value="SA">Saudi Arabia</option>
-                    <option value="SN">Senegal</option>
-                    <option value="RS">Serbia</option>
-                    <option value="SC">Seychelles</option>
-                    <option value="SL">Sierra Leone</option>
-                    <option value="SG">Singapore</option>
-                    <option value="SX">Sint Maarten (Dutch part)</option>
-                    <option value="SK">Slovakia</option>
-                    <option value="SI">Slovenia</option>
-                    <option value="SB">Solomon Islands</option>
-                    <option value="SO">Somalia</option>
-                    <option value="ZA">South Africa</option>
-                    <option value="GS">South Georgia and the South Sandwich Islands</option>
-                    <option value="SS">South Sudan</option>
-                    <option value="ES">Spain</option>
-                    <option value="LK">Sri Lanka</option>
-                    <option value="SD">Sudan</option>
-                    <option value="SR">Suriname</option>
-                    <option value="SJ">Svalbard and Jan Mayen</option>
-                    <option value="SZ">Swaziland</option>
-                    <option value="SE">Sweden</option>
-                    <option value="CH">Switzerland</option>
-                    <option value="SY">Syrian Arab Republic</option>
-                    <option value="TW">Taiwan, Province of China</option>
-                    <option value="TJ">Tajikistan</option>
-                    <option value="TZ">Tanzania, United Republic of</option>
-                    <option value="TH">Thailand</option>
-                    <option value="TL">Timor-Leste</option>
-                    <option value="TG">Togo</option>
-                    <option value="TK">Tokelau</option>
-                    <option value="TO">Tonga</option>
-                    <option value="TT">Trinidad and Tobago</option>
-                    <option value="TN">Tunisia</option>
-                    <option value="TR">Turkey</option>
-                    <option value="TM">Turkmenistan</option>
-                    <option value="TC">Turks and Caicos Islands</option>
-                    <option value="TV">Tuvalu</option>
-                    <option value="UG">Uganda</option>
-                    <option value="UA">Ukraine</option>
-                    <option value="AE">United Arab Emirates</option>
-                    <option value="GB">United Kingdom</option>
-                    <option value="US">United States</option>
-                    <option value="UM">United States Minor Outlying Islands</option>
-                    <option value="UY">Uruguay</option>
-                    <option value="UZ">Uzbekistan</option>
-                    <option value="VU">Vanuatu</option>
-                    <option value="VE">Venezuela, Bolivarian Republic of</option>
-                    <option value="VN">Viet Nam</option>
-                    <option value="VG">Virgin Islands, British</option>
-                    <option value="VI">Virgin Islands, U.S.</option>
-                    <option value="WF">Wallis and Futuna</option>
-                    <option value="EH">Western Sahara</option>
-                    <option value="YE">Yemen</option>
-                    <option value="ZM">Zambia</option>
-                    <option value="ZW">Zimbabwe</option>
-                </select>
-            </div>
+        <div class="field">
+          <label>Middle name</label>
+          <input type="text" placeholder="Middle Name">
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form">
-            <div class="fields">
-                <div class="two field required error">
-                    <label>First Name</label>
-                    <input placeholder="First Name" type="text">
-                </div>
-                <div class="two field required error">
-                    <label>Last Name</label>
-                    <input placeholder="Last Name" type="text">
-                </div>
-            </div>
-            <div class="field error">
-                <label>Gender</label>
-                <div class="ui selection dropdown">
-                    <div class="default text">Select</div>
-                    <i class="dropdown icon"></i>
-                    <input type="hidden" name="gender">
-                    <div class="menu">
-                        <div class="item" data-value="male">Male</div>
-                        <div class="item" data-value="female">Female</div>
-                    </div>
-                </div>
-                <div class="ui left pointing basic red mini label" style="margin-top: 5px;">Please enter a value! </div>
-            </div>
-            <div class="inline field required error">
-                <div class="ui checkbox">
-                    <input type="checkbox" tabindex="0" class="hidden">
-                    <label>I agree to the Terms and Conditions</label>
-                </div>
-            </div>
+        <div class="field">
+          <label>Last name</label>
+          <input type="text" placeholder="Last Name">
         </div>
+      </div>
     </div>
-    <div class="ui attached segment">
-        <p>Multiple selection</p>
-        <select name="skills" multiple="" class="ui fluid dropdown normal-max">
-            <option value="">Skills</option>
-            <option value="angular">Angular</option>
-            <option value="css">CSS</option>
-            <option value="design">Graphic Design</option>
-            <option value="ember">Ember</option>
-            <option value="html">HTML</option>
-            <option value="ia">Information Architecture</option>
-            <option value="javascript">Javascript</option>
-            <option value="mech">Mechanical Engineering</option>
-            <option value="meteor">Meteor</option>
-            <option value="node">NodeJS</option>
-            <option value="plumbing">Plumbing</option>
-            <option value="python">Python</option>
-            <option value="rails">Rails</option>
-            <option value="react">React</option>
-            <option value="repair">Kitchen Repair</option>
-            <option value="ruby">Ruby</option>
-            <option value="ui">UI Design</option>
-            <option value="ux">User Experience</option>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="three fields">
+        <div class="field">
+          <label>First name</label>
+          <input type="text" placeholder="First Name">
+        </div>
+        <div class="field">
+          <label>Middle name</label>
+          <input type="text" placeholder="Middle Name">
+        </div>
+        <div class="field">
+          <label>Last name</label>
+          <input type="text" placeholder="Last Name">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="field">
+        <label>User Input</label>
+        <input type="text" placeholder="A field is a form element containing a label and an input">
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="inline fields">
+        <div class="eight wide field">
+          <label>Name</label>
+          <input type="text" placeholder="First Name">
+        </div>
+        <div class="three wide field">
+          <input type="text" placeholder="Middle Name">
+        </div>
+        <div class="five wide field">
+          <input type="text" placeholder="Last Name">
+          <div class="ui left pointing basic green label" style="margin-top: 5px;">Please enter a name!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="field">
+        <label>Text</label>
+        <textarea style="margin-top: 0px; margin-bottom: 0px;"></textarea>
+        <!-- define max-height and min-height -->
+      </div>
+      <div class="field">
+        <label>Short Text</label>
+        <textarea rows="2" style="margin-top: 0px; margin-bottom: 0px;"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>Checkbox</label>
+        </div>
+        <div class="ui slider checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>Slider</label>
+        </div>
+        <div class="ui toggle checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>Toggle</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>Label</label>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="inline fields">
+        <label for="fruit">Select your favorite fruit:</label>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+            <label>Apples</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>Oranges</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>Pears</label>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui radio checkbox">
+            <input type="radio" name="fruit" tabindex="0" class="hidden">
+            <label>Grapefruit</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="field">
+        <label>Country</label>
+        <select class="ui search dropdown fluid">
+          <option value="">select multiple select search in dropdown.html</option>
+          <option value="AF">Afghanistan</option>
+          <option value="AX">Åland Islands</option>
+          <option value="AL">Albania</option>
+          <option value="DZ">Algeria</option>
+          <option value="AS">American Samoa</option>
+          <option value="AD">Andorra</option>
+          <option value="AO">Angola</option>
+          <option value="AI">Anguilla</option>
+          <option value="AQ">Antarctica</option>
+          <option value="AG">Antigua and Barbuda</option>
+          <option value="AR">Argentina</option>
+          <option value="AM">Armenia</option>
+          <option value="AW">Aruba</option>
+          <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
+          <option value="AZ">Azerbaijan</option>
+          <option value="BS">Bahamas</option>
+          <option value="BH">Bahrain</option>
+          <option value="BD">Bangladesh</option>
+          <option value="BB">Barbados</option>
+          <option value="BY">Belarus</option>
+          <option value="BE">Belgium</option>
+          <option value="BZ">Belize</option>
+          <option value="BJ">Benin</option>
+          <option value="BM">Bermuda</option>
+          <option value="BT">Bhutan</option>
+          <option value="BO">Bolivia, Plurinational State of</option>
+          <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+          <option value="BA">Bosnia and Herzegovina</option>
+          <option value="BW">Botswana</option>
+          <option value="BV">Bouvet Island</option>
+          <option value="BR">Brazil</option>
+          <option value="IO">British Indian Ocean Territory</option>
+          <option value="BN">Brunei Darussalam</option>
+          <option value="BG">Bulgaria</option>
+          <option value="BF">Burkina Faso</option>
+          <option value="BI">Burundi</option>
+          <option value="KH">Cambodia</option>
+          <option value="CM">Cameroon</option>
+          <option value="CA">Canada</option>
+          <option value="CV">Cape Verde</option>
+          <option value="KY">Cayman Islands</option>
+          <option value="CF">Central African Republic</option>
+          <option value="TD">Chad</option>
+          <option value="CL">Chile</option>
+          <option value="CN">China</option>
+          <option value="CX">Christmas Island</option>
+          <option value="CC">Cocos (Keeling) Islands</option>
+          <option value="CO">Colombia</option>
+          <option value="KM">Comoros</option>
+          <option value="CG">Congo</option>
+          <option value="CD">Congo, the Democratic Republic of the</option>
+          <option value="CK">Cook Islands</option>
+          <option value="CR">Costa Rica</option>
+          <option value="CI">Côte d'Ivoire</option>
+          <option value="HR">Croatia</option>
+          <option value="CU">Cuba</option>
+          <option value="CW">Curaçao</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="DK">Denmark</option>
+          <option value="DJ">Djibouti</option>
+          <option value="DM">Dominica</option>
+          <option value="DO">Dominican Republic</option>
+          <option value="EC">Ecuador</option>
+          <option value="EG">Egypt</option>
+          <option value="SV">El Salvador</option>
+          <option value="GQ">Equatorial Guinea</option>
+          <option value="ER">Eritrea</option>
+          <option value="EE">Estonia</option>
+          <option value="ET">Ethiopia</option>
+          <option value="FK">Falkland Islands (Malvinas)</option>
+          <option value="FO">Faroe Islands</option>
+          <option value="FJ">Fiji</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="GF">French Guiana</option>
+          <option value="PF">French Polynesia</option>
+          <option value="TF">French Southern Territories</option>
+          <option value="GA">Gabon</option>
+          <option value="GM">Gambia</option>
+          <option value="GE">Georgia</option>
+          <option value="DE">Germany</option>
+          <option value="GH">Ghana</option>
+          <option value="GI">Gibraltar</option>
+          <option value="GR">Greece</option>
+          <option value="GL">Greenland</option>
+          <option value="GD">Grenada</option>
+          <option value="GP">Guadeloupe</option>
+          <option value="GU">Guam</option>
+          <option value="GT">Guatemala</option>
+          <option value="GG">Guernsey</option>
+          <option value="GN">Guinea</option>
+          <option value="GW">Guinea-Bissau</option>
+          <option value="GY">Guyana</option>
+          <option value="HT">Haiti</option>
+          <option value="HM">Heard Island and McDonald Islands</option>
+          <option value="VA">Holy See (Vatican City State)</option>
+          <option value="HN">Honduras</option>
+          <option value="HK">Hong Kong</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="IN">India</option>
+          <option value="ID">Indonesia</option>
+          <option value="IR">Iran, Islamic Republic of</option>
+          <option value="IQ">Iraq</option>
+          <option value="IE">Ireland</option>
+          <option value="IM">Isle of Man</option>
+          <option value="IL">Israel</option>
+          <option value="IT">Italy</option>
+          <option value="JM">Jamaica</option>
+          <option value="JP">Japan</option>
+          <option value="JE">Jersey</option>
+          <option value="JO">Jordan</option>
+          <option value="KZ">Kazakhstan</option>
+          <option value="KE">Kenya</option>
+          <option value="KI">Kiribati</option>
+          <option value="KP">Korea, Democratic People's Republic of</option>
+          <option value="KR">Korea, Republic of</option>
+          <option value="KW">Kuwait</option>
+          <option value="KG">Kyrgyzstan</option>
+          <option value="LA">Lao People's Democratic Republic</option>
+          <option value="LV">Latvia</option>
+          <option value="LB">Lebanon</option>
+          <option value="LS">Lesotho</option>
+          <option value="LR">Liberia</option>
+          <option value="LY">Libya</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MO">Macao</option>
+          <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+          <option value="MG">Madagascar</option>
+          <option value="MW">Malawi</option>
+          <option value="MY">Malaysia</option>
+          <option value="MV">Maldives</option>
+          <option value="ML">Mali</option>
+          <option value="MT">Malta</option>
+          <option value="MH">Marshall Islands</option>
+          <option value="MQ">Martinique</option>
+          <option value="MR">Mauritania</option>
+          <option value="MU">Mauritius</option>
+          <option value="YT">Mayotte</option>
+          <option value="MX">Mexico</option>
+          <option value="FM">Micronesia, Federated States of</option>
+          <option value="MD">Moldova, Republic of</option>
+          <option value="MC">Monaco</option>
+          <option value="MN">Mongolia</option>
+          <option value="ME">Montenegro</option>
+          <option value="MS">Montserrat</option>
+          <option value="MA">Morocco</option>
+          <option value="MZ">Mozambique</option>
+          <option value="MM">Myanmar</option>
+          <option value="NA">Namibia</option>
+          <option value="NR">Nauru</option>
+          <option value="NP">Nepal</option>
+          <option value="NL">Netherlands</option>
+          <option value="NC">New Caledonia</option>
+          <option value="NZ">New Zealand</option>
+          <option value="NI">Nicaragua</option>
+          <option value="NE">Niger</option>
+          <option value="NG">Nigeria</option>
+          <option value="NU">Niue</option>
+          <option value="NF">Norfolk Island</option>
+          <option value="MP">Northern Mariana Islands</option>
+          <option value="NO">Norway</option>
+          <option value="OM">Oman</option>
+          <option value="PK">Pakistan</option>
+          <option value="PW">Palau</option>
+          <option value="PS">Palestinian Territory, Occupied</option>
+          <option value="PA">Panama</option>
+          <option value="PG">Papua New Guinea</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Peru</option>
+          <option value="PH">Philippines</option>
+          <option value="PN">Pitcairn</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="PR">Puerto Rico</option>
+          <option value="QA">Qatar</option>
+          <option value="RE">Réunion</option>
+          <option value="RO">Romania</option>
+          <option value="RU">Russian Federation</option>
+          <option value="RW">Rwanda</option>
+          <option value="BL">Saint Barthélemy</option>
+          <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+          <option value="KN">Saint Kitts and Nevis</option>
+          <option value="LC">Saint Lucia</option>
+          <option value="MF">Saint Martin (French part)</option>
+          <option value="PM">Saint Pierre and Miquelon</option>
+          <option value="VC">Saint Vincent and the Grenadines</option>
+          <option value="WS">Samoa</option>
+          <option value="SM">San Marino</option>
+          <option value="ST">Sao Tome and Principe</option>
+          <option value="SA">Saudi Arabia</option>
+          <option value="SN">Senegal</option>
+          <option value="RS">Serbia</option>
+          <option value="SC">Seychelles</option>
+          <option value="SL">Sierra Leone</option>
+          <option value="SG">Singapore</option>
+          <option value="SX">Sint Maarten (Dutch part)</option>
+          <option value="SK">Slovakia</option>
+          <option value="SI">Slovenia</option>
+          <option value="SB">Solomon Islands</option>
+          <option value="SO">Somalia</option>
+          <option value="ZA">South Africa</option>
+          <option value="GS">South Georgia and the South Sandwich Islands</option>
+          <option value="SS">South Sudan</option>
+          <option value="ES">Spain</option>
+          <option value="LK">Sri Lanka</option>
+          <option value="SD">Sudan</option>
+          <option value="SR">Suriname</option>
+          <option value="SJ">Svalbard and Jan Mayen</option>
+          <option value="SZ">Swaziland</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="SY">Syrian Arab Republic</option>
+          <option value="TW">Taiwan, Province of China</option>
+          <option value="TJ">Tajikistan</option>
+          <option value="TZ">Tanzania, United Republic of</option>
+          <option value="TH">Thailand</option>
+          <option value="TL">Timor-Leste</option>
+          <option value="TG">Togo</option>
+          <option value="TK">Tokelau</option>
+          <option value="TO">Tonga</option>
+          <option value="TT">Trinidad and Tobago</option>
+          <option value="TN">Tunisia</option>
+          <option value="TR">Turkey</option>
+          <option value="TM">Turkmenistan</option>
+          <option value="TC">Turks and Caicos Islands</option>
+          <option value="TV">Tuvalu</option>
+          <option value="UG">Uganda</option>
+          <option value="UA">Ukraine</option>
+          <option value="AE">United Arab Emirates</option>
+          <option value="GB">United Kingdom</option>
+          <option value="US">United States</option>
+          <option value="UM">United States Minor Outlying Islands</option>
+          <option value="UY">Uruguay</option>
+          <option value="UZ">Uzbekistan</option>
+          <option value="VU">Vanuatu</option>
+          <option value="VE">Venezuela, Bolivarian Republic of</option>
+          <option value="VN">Viet Nam</option>
+          <option value="VG">Virgin Islands, British</option>
+          <option value="VI">Virgin Islands, U.S.</option>
+          <option value="WF">Wallis and Futuna</option>
+          <option value="EH">Western Sahara</option>
+          <option value="YE">Yemen</option>
+          <option value="ZM">Zambia</option>
+          <option value="ZW">Zimbabwe</option>
         </select>
+      </div>
     </div>
-    <div class="ui attached segment">
-        <div class="ui form success">
-            <div class="field">
-                <label>E-mail</label>
-                <input type="email" placeholder="joe@schmoe.com">
-            </div>
-            <div class="ui success message">
-                <i class="close icon"></i>
-                <div class="header">Form Completed</div>
-                <p>You're all signed up for the newsletter.</p>
-            </div>
-            <div class="ui submit button">Submit</div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form">
+      <div class="fields">
+        <div class="two field required error">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text">
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui warning message">
-            <i class="close icon"></i>
-            <div class="header">We had some issues</div>
-            <ul class="list">
-                <li>Please enter your first name</li>
-            </ul>
+        <div class="two field required error">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text">
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui form error">
-            <div class="field">
-                <label>E-mail</label>
-                <input type="email" placeholder="joe@schmoe.com">
-            </div>
-            <div class="ui error message">
-                <i class="close icon"></i>
-                <div class="header">Action Forbidden</div>
-                <p>You can only sign up for an account once with a given e-mail address.</p>
-            </div>
-            <div class="ui submit button">Submit</div>
+      </div>
+      <div class="field error">
+        <label>Gender</label>
+        <div class="ui selection dropdown">
+          <div class="default text">Select</div>
+          <i class="dropdown icon"></i>
+          <input type="hidden" name="gender">
+          <div class="menu">
+            <div class="item" data-value="male">Male</div>
+            <div class="item" data-value="female">Female</div>
+          </div>
         </div>
-    </div>
-    <div class="ui attached segment">
-        <div class="ui small form">
-            <div class="two fields">
-                <div class="field">
-                    <label>First Name</label>
-                    <input placeholder="First Name" type="text">
-                </div>
-                <div class="field">
-                    <label>Last Name</label>
-                    <input placeholder="Last Name" type="text">
-                </div>
-            </div>
-            <div class="ui submit button">Submit</div>
+        <div class="ui left pointing basic red mini label" style="margin-top: 5px;">Please enter a value! </div>
+      </div>
+      <div class="inline field required error">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>I agree to the Terms and Conditions</label>
         </div>
+      </div>
     </div>
-    <div class="ui bottom attached secondary segment">
-        <p>This segment is on bottom</p>
+  </div>
+  <div class="ui attached segment">
+    <p>Multiple selection</p>
+    <select name="skills" multiple="" class="ui fluid dropdown normal-max">
+      <option value="">Skills</option>
+      <option value="angular">Angular</option>
+      <option value="css">CSS</option>
+      <option value="design">Graphic Design</option>
+      <option value="ember">Ember</option>
+      <option value="html">HTML</option>
+      <option value="ia">Information Architecture</option>
+      <option value="javascript">Javascript</option>
+      <option value="mech">Mechanical Engineering</option>
+      <option value="meteor">Meteor</option>
+      <option value="node">NodeJS</option>
+      <option value="plumbing">Plumbing</option>
+      <option value="python">Python</option>
+      <option value="rails">Rails</option>
+      <option value="react">React</option>
+      <option value="repair">Kitchen Repair</option>
+      <option value="ruby">Ruby</option>
+      <option value="ui">UI Design</option>
+      <option value="ux">User Experience</option>
+    </select>
+  </div>
+  <div class="ui attached segment">
+    <h2>DataTime picker </h2>
+    <p><a href="https://github.com/chmln/flatpickr" target="_blank">flatpickr</a></p>
+    <div class="ui form">
+      <div class="inline fields">
+        <div class="eight wide field">
+          <label>Date:</label>
+          <input class='calendar' placeholder="calendar 1">
+        </div>
+      </div>
     </div>
-    <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
-    <script src="./js/checkbox.min.js"></script>
-    <script src="./js/dropdown.min.js"></script>
-    <script src="./js/transition.min.js"></script>
-    <script src="./js/api.min.js"></script>
-    <script>
-    $(function() {
-        $('.checkbox').checkbox();
-        $('.ui.radio.checkbox').checkbox();
-        $('.ui.dropdown').dropdown();
-        $('.ui.normal-max.dropdown')
-            .dropdown({
-                maxSelections: 5
-            });
-        $('.message .close').on('click', function() {
-            $(this).closest('.message').transition('fade');
-        });
-    })
-    </script>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form success">
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" placeholder="joe@schmoe.com">
+      </div>
+      <div class="ui success message">
+        <i class="close icon"></i>
+        <div class="header">Form Completed</div>
+        <p>You're all signed up for the newsletter.</p>
+      </div>
+      <div class="ui submit button">Submit</div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui warning message">
+      <i class="close icon"></i>
+      <div class="header">We had some issues</div>
+      <ul class="list">
+        <li>Please enter your first name</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui form error">
+      <div class="field">
+        <label>E-mail</label>
+        <input type="email" placeholder="joe@schmoe.com">
+      </div>
+      <div class="ui error message">
+        <i class="close icon"></i>
+        <div class="header">Action Forbidden</div>
+        <p>You can only sign up for an account once with a given e-mail address.</p>
+      </div>
+      <div class="ui submit button">Submit</div>
+    </div>
+  </div>
+  <div class="ui attached segment">
+    <div class="ui small form">
+      <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text">
+        </div>
+      </div>
+      <div class="ui submit button">Submit</div>
+    </div>
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/checkbox.min.js"></script>
+  <script src="./js/dropdown.min.js"></script>
+  <script src="./js/transition.min.js"></script>
+  <script src="./js/api.min.js"></script>
+  <script src="./js/api.min.js"></script>
+  <script src="./js/plug/flatpickr.js"></script>
+  <script>
+  $(function() {
+    $('.checkbox').checkbox();
+    $('.ui.radio.checkbox').checkbox();
+    $('.ui.dropdown').dropdown();
+    $('.ui.normal-max.dropdown')
+      .dropdown({
+        maxSelections: 5
+      });
+    $('.message .close').on('click', function() {
+      $(this).closest('.message').transition('fade');
+    });
+
+    flatpickr('.calendar');
+  })
+  </script>
 </body>
 
 </html>
