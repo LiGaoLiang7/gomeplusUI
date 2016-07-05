@@ -47,6 +47,7 @@
     <li><a target="_blank">transition 提供动画</a></li>
     <li><a href="http://lefeier.net/ext/gomeplusUI/shape.html" target="_blank">shape</a></li>
     <li><a href="http://lefeier.net/ext/gomeplusUI/slide.html" target="_blank">slide</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/avator.html" target="_blank">avator 上传头像</a></li>
   </ul>
   <h4>api</h4>
   <ul>
