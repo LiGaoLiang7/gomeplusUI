@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/transition.css">
+  <link rel="stylesheet" href="./css/message.css">
+  <!-- 图片剪裁用css -->
+  <link rel="stylesheet" href="./css/imgareaselect-animated.css">
+  <style>
+  .view-image img {
+    display: block;
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  .view-image .selectImg {
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .avator-modal .smallImg {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .avator-modal .smallImg,
+  .avator-modal .smallImg>img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avator-modal .smallImg>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  </style>
+</head>
+
+<body style="width:80%; margin:0 auto;">
+  <div class="ui top attached secondary segment">
+    <p>this page for preview and upload avator</p>
+  </div>
+  <div class="ui attached segment">
+    <h2>avator upload</h2>
+    <button class="ui button primary upload-avator">upload avator</button>
+    <!-- upload avator modal begin -->
+    <div class="ui modal avator-modal">
+      <i class="close icon"></i>
+      <div class="header">
+        上传头像
+      </div>
+      <div class="image content">
+        <div class="ui medium image view-image" id="bigImg">
+          <img id="photo" src="./image/avator.jpg">
+          <button class="ui green button selectImg">选择文件</button>
+        </div>
+        <div class="description">
+          <div class="ui header">预览</div>
+          <div class="smallImg" id="preview">
+            <img id="view_photo" src="image/avator.jpg">
+          </div>
+          <div class="ui positive small message success-meaage" style="display:none;">
+            <p>您的头像修改成功。</p>
+        </div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          取消
+        </div>
+        <button id="uploadImg" class="ui primary right labled icon button">确认<i class="icon checkmark"></i></button>
+      </div>
+      <input id="upload" style="display: none;" type="file" name="file" onchange="Upload.change(this)" />
+    </div>
+    <!-- upload avator modal ends /-->
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <!-- gomeplus-ui moduals begin -->
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/transition.min.js"></script>
+  <script src="./js/dimmer.min.js"></script>
+  <script src="./js/modal.min.js"></script>
+  <script src="./js/api.min.js"></script>
+  <!-- gomeplus-ui moduals ends /-->
+  <!-- upload avator begin /-->
+  <script src="./js/plug/upload.js"></script>
+  <script src="./js/plug/jquery.ajaxfileupload.js"></script>
+  <script src="./js/plug/jquery.imgareaselect.min.js"></script>
+  <!-- upload avator begin /-->
+  <script>
+  $(function() {
+    $(".upload-avator").click(function(event) {
+      $('.avator-modal').modal('show');
+    });
+
+    // 初始化上传
+    Upload.init();
+    $(".selectImg").click(function() {
+      $("#upload").click();
+    });
+    var val = $("#upload").val();
+    $('#uploadImg').val(val);
+    $("#upload").ajaxfileupload({
+      'action': Upload.url,
+      'submit_button': $('#uploadImg'),
+      'params': {
+        /** 传递参数 **/
+      },
+      'onComplete': function(rs) {
+        console.log('custom handler for file:' + rs.filename);
+        $(".success-meaage").show();
+        $(".imgareaselect-outer").hide();
+        $(".imgareaselect-selection").parent('div').hide();
+
+        setTimeout(function(){
+        	$('.avator-modal').modal('hide');
+        }, 500);
+      },
+      'onStart': function() {
+        //console.log('cancels upload');
+      },
+      'onCancel': function() {
+        alert('上传失败，请重试！');
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>
