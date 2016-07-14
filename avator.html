@@ -17,8 +17,6 @@
   <style>
   .view-image img {
     display: block;
-    max-width: 500px;
-    max-height: 500px;
   }
   
   .view-image .selectImg {
@@ -31,12 +29,16 @@
     position: relative;
   }
   
-  .avator-modal .smallImg,
-  .avator-modal .smallImg>img {
-    width: 150px;
-    height: 150px;
+  .avator-modal .smallImg1,
+  .avator-modal .smallImg1>img {
+    width: 100px;
+    height: 100px;
   }
-  
+    .avator-modal .smallImg2,
+  .avator-modal .smallImg2>img {
+    width: 50px;
+    height: 50px;
+  }
   .avator-modal .smallImg>img {
     position: absolute;
     left: 0;
@@ -55,25 +57,32 @@
     <!-- upload avator modal begin -->
     <div class="ui modal avator-modal">
       <i class="close icon"></i>
-      <div class="header">
+      <div class="ui header">
         上传头像
+        <div class="sub header">仅支持JPG,GIF,PNG格式;文件小于5M</div>
       </div>
       <div class="image content">
         <div class="ui medium image view-image" id="bigImg">
           <img id="photo" src="./image/avator.jpg">
           <button class="ui green button selectImg">选择文件</button>
         </div>
-        <div class="description">
-          <div class="ui header">预览</div>
-          <div class="smallImg" id="preview">
+        <div class="description" style="margin:10px;">
+          <div class="smallImg smallImg1" id="preview">
             <img id="view_photo" src="image/avator.jpg">
           </div>
-          <div class="ui positive small message success-meaage" style="display:none;">
-            <p>您的头像修改成功。</p>
+          <div class="ui header" style="text-align:center; font-weight: normal;">预览 100*100</div>
         </div>
+        <div class="description" style="margin:10px;">
+          <div class="smallImg smallImg2" id="preview2">
+            <img id="view_photo2" src="image/avator.jpg">
+          </div>
+          <div class="ui header" style="text-align:center; font-weight: normal;">预览 50*50</div>
         </div>
       </div>
       <div class="actions">
+      <div class="ui positive mini message compact success-meaage" style="display:none; float:left; ">
+            <p>您的头像修改成功。</p>
+          </div>
         <div class="ui black deny button">
           取消
         </div>
@@ -96,7 +105,7 @@
   <!-- upload avator begin /-->
   <script src="./js/plug/upload.js"></script>
   <script src="./js/plug/jquery.ajaxfileupload.js"></script>
-  <script src="./js/plug/jquery.imgareaselect.min.js"></script>
+  <script src="./js/plug/jquery.imgareaselect.js"></script>
   <!-- upload avator begin /-->
   <script>
   $(function() {
@@ -118,13 +127,13 @@
         /** 传递参数 **/
       },
       'onComplete': function(rs) {
-        console.log('custom handler for file:' + rs.filename);
+        // console.log('custom handler for file:' + rs.filename);
         $(".success-meaage").show();
         $(".imgareaselect-outer").hide();
         $(".imgareaselect-selection").parent('div').hide();
 
-        setTimeout(function(){
-        	$('.avator-modal').modal('hide');
+        setTimeout(function() {
+          $('.avator-modal').modal('hide');
         }, 500);
       },
       'onStart': function() {
@@ -134,6 +143,12 @@
         alert('上传失败，请重试！');
       }
     });
+
+    $(".modal .deny.button, .modal .close.icon").click(function(event) {
+      $(".imgareaselect-outer").hide();
+      $(".imgareaselect-selection").parent('div').hide();
+    });
+
   });
   </script>
 </body>
