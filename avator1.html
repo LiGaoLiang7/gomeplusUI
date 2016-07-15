@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/segment.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/icon.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/transition.css">
+  <link rel="stylesheet" href="./css/dimmer.css">
+  <link rel="stylesheet" href="./css/message.css">
+  <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/progress.css">
+  <!-- 图片剪裁用css -->
+  <link rel="stylesheet" href="./css/jquery.Jcrop.min.css">
+  <style>
+  .view-image img {
+    display: block;
+    max-width: 480px;
+    max-height: 480px;
+  }
+  
+  .view-image {
+    padding: 0 15px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .avator-modal .explanition {
+    font-style: normal;
+    color: #666;
+    font-size: 1rem;
+    font-weight: normal;
+    padding-left: 10px;
+  }
+  
+  .tac {
+    text-align: center;
+  }
+  
+  .color_666 {
+    color: #666 !important;
+  }
+  
+  .avator-modal .previewArea {
+    position: absolute;
+    left: 105%;
+    width: 525px;
+  }
+  
+  .avator-modal .preview-container {
+    overflow: hidden;
+  }
+  
+  .avator-modal .preview-container.prev1 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avator-modal .preview-container.prev2 {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .avator-modal .preview-container.prev3 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .avator-modal .areaItem {
+    float: left;
+    margin: 0 15px;
+  }
+  
+  .jcrop-keymgr {
+    visibility: hidden !important;
+  }
+  
+  .view-image .speci-message {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .view-image .inverted.dimmer {
+    display: none;
+  }
+  </style>
+</head>
+
+<body style="width:80%; margin:0 auto;">
+  <div class="ui top attached secondary segment">
+    <p>this page for preview and upload avator</p>
+  </div>
+  <div class="ui attached segment">
+    <h2>avator upload</h2>
+    <button class="ui button primary upload-avator">upload avator</button>
+    <!-- upload avator modal begin -->
+    <div class="ui modal avator-modal">
+      <div class="ui top attached progress" id="updating-progress" style="display:none;">
+        <div class="bar"></div>
+      </div>
+      <i class="close icon"></i>
+      <div class="ui header">
+        <button class="ui primary button selectImg"><i class="icon file image outline"></i>选择文件</button><em class="explanition">仅支持JPG,GIF,PNG格式;文件小于2M,正方形最美</em>
+      </div>
+      <div class="image content view-image">
+        <img src="./image/avator.jpg" id="target" alt="[Jcrop Example]" />
+        <div class="ui active inverted dimmer" id="upload-loader">
+          <div class="ui text loader color_666">正在上传..</div>
+        </div>
+        <div id="preview-pane" class="previewArea">
+          <div class="areaItem">
+            <div class="preview-container prev1">
+              <img src="./image/avator.jpg" class="jcrop-preview" alt="Preview" />
+            </div>
+            <p class="tac color_666">150*150</p>
+          </div>
+          <div class="areaItem">
+            <div class="preview-container prev2">
+              <img src="./image/avator.jpg" class="jcrop-preview" alt="Preview" />
+            </div>
+            <p class="tac color_666">75*75</p>
+          </div>
+          <div class="areaItem">
+            <div class="preview-container prev3">
+              <img src="./image/avator.jpg" class="jcrop-preview" alt="Preview" />
+            </div>
+            <p class="tac color_666">50*50</p>
+          </div>
+        </div>
+        <div class="ui positive mini message success-meaage speci-message">
+          <p>图片剪裁比例1/1，剪裁后将生成3种规格的尺寸。</p>
+        </div>
+        <div class="ui positive mini message compact success-meaage speci-message" style="display:none;">
+          <p>您的头像修改成功。</p>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          取消
+        </div>
+        <button id="uploadImg" class="ui primary right labled icon button">确认<i class="icon checkmark"></i></button>
+      </div>
+      <form id="fileupload-form">
+        <input id="upload" style="display: none;" type="file" name="upload" />
+      </form>
+    </div>
+    <!-- upload avator modal ends /-->
+  </div>
+  <div class="ui bottom attached secondary segment">
+    <p>This segment is on bottom</p>
+  </div>
+  <!-- gomeplus-ui moduals begin -->
+  <script src="http://cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+  <script src="./js/transition.min.js"></script>
+  <script src="./js/dimmer.min.js"></script>
+  <script src="./js/modal.min.js"></script>
+  <script src="./js/api.min.js"></script>
+  <script src="./js/progress.min.js"></script>
+  <!-- gomeplus-ui moduals ends /-->
+  <!-- select imagearea upload avator begin /-->
+  <script src="./js/plug/jquery.Jcrop.min.js"></script>
+  <script src="./js/plug/jquery.form.js"></script>
+  <!-- select imagearea upload avator begin /-->
+  <script>
+  $(function() {
+    var cropParam = {
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0,
+        img: ""
+      }
+      // 打开上传头像的对话框 
+    $(".upload-avator").click(function(event) {
+      $('.avator-modal').modal('show');
+    });
+    // 选择文件对话框 
+    $(".selectImg").click(function() {
+      $("#upload").click();
+
+    });
+
+    $('#fileupload-form').on('submit', (function(e) {
+      e.preventDefault();
+      //序列化表单   
+      var serializeData = $(this).serialize();
+      // var formData = new FormData(this);
+      $(this).ajaxSubmit({
+        type: 'POST',
+        url: "handleupload.php",
+        dataType: 'json',
+        data: serializeData,
+        //attention!!!   
+        contentType: false,
+        cache: false,
+        processData: false,
+
+        beforeSubmit: function() {
+          //上传图片之前的处理 
+          $('#updating-progress').show().progress({
+            percent: 0
+          });
+          $(".selectImg.button").html('上传中..');
+          $("#upload-loader").css('display', 'block');
+        },
+        uploadProgress: function(event, position, total, percentComplete) {
+          //在这里控制进度条
+          $('#updating-progress').progress({
+            percent: percentComplete
+          });
+        },
+        success: function(data) {
+          $(".selectImg.button").html("<i class='icon file image outline'></i>选择文件");
+          $("#upload-loader").css('display', 'none');
+          $('#updating-progress').progress({
+            percent: 0
+          }).hide();
+          // 在这里设置新的图片路径
+          $('.jcrop-holder>img,\
+            #target, \
+            .jcrop-holder>div>div>img,\
+            #preview-pane .preview-container>img').attr('src', './upload/' + data.pic);
+          cropParam.img = data.pic;
+          cropPrev();
+        },
+        error: function(data) {
+          alert(data.responseText);
+        }
+      });
+    }));
+    // 绑定文件选择事件，一旦文件改变 就让form提交
+    $("#upload").on("change", function() {
+      $(this).parent().submit();
+    });
+
+    $("#uploadImg").click(function(event) {
+      if(cropParam.w === 0 || cropParam.h === 0){
+        alert("请剪裁图片");return;
+      }
+      $.post("cropimage.php", {
+        x: cropParam.x,
+        y: cropParam.y,
+        w: cropParam.w,
+        h: cropParam.h,
+        img: cropParam.img,
+        option : 'crop'
+      }, function(data, textStatus) {
+        if (textStatus == "success") {
+          console.log(data);
+        }
+      });
+    });
+
+    function cropPrev() {
+      // 剪裁预览
+      var jcrop_api,
+        boundx,
+        boundy,
+        // Grab some information about the preview pane
+        $preview = $('#preview-pane'),
+        $pcnt1 = $('#preview-pane .prev1'),
+        $pimg1 = $('#preview-pane .prev1 img'),
+        xsize1 = $pcnt1.width(),
+        ysize1 = $pcnt1.height(),
+        $pcnt2 = $('#preview-pane .prev2'),
+        $pimg2 = $('#preview-pane .prev2 img'),
+        xsize2 = $pcnt2.width(),
+        ysize2 = $pcnt2.height(),
+        $pcnt3 = $('#preview-pane .prev3'),
+        $pimg3 = $('#preview-pane .prev3 img'),
+        xsize3 = $pcnt3.width(),
+        ysize3 = $pcnt3.height();
+      $('#target').Jcrop({
+        onChange: updatePreview,
+        onSelect: updatePreview,
+        aspectRatio: 1 / 1,
+        minSize: [150, 150]
+
+      }, function() {
+        // Use the API to get the real image size
+        var bounds = this.getBounds();
+        boundx = bounds[0];
+        boundy = bounds[1];
+        // Store the API in the jcrop_api variable
+        jcrop_api = this;
+        $preview.appendTo(jcrop_api.ui.holder);
+      });
+
+      function updatePreview(c) {
+        if (parseInt(c.w) > 0) {
+          cropParam.x = c.x;
+          cropParam.y = c.y;
+          cropParam.w = c.w;
+          cropParam.h = c.h;
+          var rx1 = xsize1 / c.w;
+          var ry1 = ysize1 / c.h;
+          var rx2 = xsize2 / c.w;
+          var ry2 = ysize2 / c.h;
+          var rx3 = xsize3 / c.w;
+          var ry3 = ysize3 / c.h;
+          $pimg1.css({
+            width: Math.round(rx1 * boundx) + 'px',
+            height: Math.round(ry1 * boundy) + 'px',
+            marginLeft: '-' + Math.round(rx1 * c.x) + 'px',
+            marginTop: '-' + Math.round(ry1 * c.y) + 'px'
+          });
+          $pimg2.css({
+            width: Math.round(rx2 * boundx) + 'px',
+            height: Math.round(ry2 * boundy) + 'px',
+            marginLeft: '-' + Math.round(rx2 * c.x) + 'px',
+            marginTop: '-' + Math.round(ry2 * c.y) + 'px'
+          });
+          $pimg3.css({
+            width: Math.round(rx3 * boundx) + 'px',
+            height: Math.round(ry3 * boundy) + 'px',
+            marginLeft: '-' + Math.round(rx3 * c.x) + 'px',
+            marginTop: '-' + Math.round(ry3 * c.y) + 'px'
+          });
+        }
+      };
+    }
+  });
+  </script>
+</body>
+
+</html>
