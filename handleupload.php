@@ -17,7 +17,7 @@
             exit; 
         } 
         $type = strstr($picname, '.'); //限制上传格式 
-        if ($type != ".gif" && $type != ".jpg" && $type != ".png" ) { 
+        if ($type != ".gif" && $type != ".jpg" && $type != ".png" && $type != ".jpeg" ) { 
             echo '图片格式不对！'; 
             exit; 
         } 

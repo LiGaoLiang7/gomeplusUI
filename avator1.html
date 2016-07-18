@@ -55,6 +55,14 @@
   
   .avator-modal .preview-container {
     overflow: hidden;
+    border: 1px rgba(0, 0, 0, .4) solid;
+    background-color: white;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
   }
   
   .avator-modal .preview-container.prev1 {
@@ -75,6 +83,7 @@
   .avator-modal .areaItem {
     float: left;
     margin: 0 15px;
+    padding: 6px;
   }
   
   .jcrop-keymgr {
@@ -107,7 +116,7 @@
       </div>
       <i class="close icon"></i>
       <div class="ui header">
-        <button class="ui primary button selectImg"><i class="icon file image outline"></i>选择文件</button><em class="explanition">仅支持JPG,GIF,PNG格式;文件小于2M,正方形最美</em>
+        <button class="ui primary button selectImg"><i class="icon file image outline"></i>选择文件</button><em class="explanition">仅支持JPG,GIF,PNG格式;文件小于2M</em>
       </div>
       <div class="image content view-image">
         <img src="./image/avator.jpg" id="target" alt="[Jcrop Example]" />
@@ -167,7 +176,7 @@
   <!-- select imagearea upload avator begin /-->
   <script src="./js/plug/jquery.Jcrop.min.js"></script>
   <script src="./js/plug/jquery.form.js"></script>
-  <!-- select imagearea upload avator begin /-->
+  <!-- select imagearea upload avator ends /-->
   <script>
   $(function() {
     var cropParam = {
@@ -175,7 +184,9 @@
         y: 0,
         w: 0,
         h: 0,
-        img: ""
+        img: "",
+        oW: 0,
+        oH: 0
       }
       // 打开上传头像的对话框 
     $(".upload-avator").click(function(event) {
@@ -259,7 +270,7 @@
           setTimeout(function() {
             $('.avator-modal').modal('hide');
           }, 1000);
-        }else{
+        } else {
           alert("抱歉，头像更改失败");
         }
       });
@@ -288,13 +299,22 @@
         onChange: updatePreview,
         onSelect: updatePreview,
         aspectRatio: 1 / 1,
-        minSize: [150, 150]
+        minSize: [100, 100]
 
       }, function() {
         // Use the API to get the real image size
         var bounds = this.getBounds();
         boundx = bounds[0];
         boundy = bounds[1];
+
+        var img_url = $("#target").attr('src');
+        // 创建对象
+        var img = new Image();
+        img.src = img_url;
+        img.onload = function() {
+          cropParam.oW = img.width;
+          cropParam.oH = img.height;
+        }
         // Store the API in the jcrop_api variable
         jcrop_api = this;
         $preview.appendTo(jcrop_api.ui.holder);
@@ -306,6 +326,14 @@
           cropParam.y = c.y;
           cropParam.w = c.w;
           cropParam.h = c.h;
+          if (cropParam.oW >= 480) {
+            cropParam.x = c.x * (cropParam.oW / 480);
+            cropParam.w = c.w * (cropParam.oW / 480);
+          }
+          if (cropParam.oH >= 480) {
+            cropParam.y = c.y * (cropParam.oH / 480);
+            cropParam.h = c.h * (cropParam.oH / 480);
+          }
           var rx1 = xsize1 / c.w;
           var ry1 = ysize1 / c.h;
           var rx2 = xsize2 / c.w;
