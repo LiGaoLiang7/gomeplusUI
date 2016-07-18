@@ -28,6 +28,7 @@
     padding: 0 15px;
     overflow: hidden;
     position: relative;
+    /*min-height: 320px;*/
   }
   
   .avator-modal .explanition {
@@ -240,8 +241,9 @@
     });
 
     $("#uploadImg").click(function(event) {
-      if(cropParam.w === 0 || cropParam.h === 0){
-        alert("请剪裁图片");return;
+      if (cropParam.w === 0 || cropParam.h === 0) {
+        alert("请剪裁图片");
+        return;
       }
       $.post("cropimage.php", {
         x: cropParam.x,
@@ -249,10 +251,16 @@
         w: cropParam.w,
         h: cropParam.h,
         img: cropParam.img,
-        option : 'crop'
+        option: 'crop'
       }, function(data, textStatus) {
-        if (textStatus == "success") {
-          console.log(data);
+        if (data === "successfully") {
+          $(".speci-message").hide();
+          $(".speci-message").eq(1).show();
+          setTimeout(function() {
+            $('.avator-modal').modal('hide');
+          }, 1000);
+        }else{
+          alert("抱歉，头像更改失败");
         }
       });
     });

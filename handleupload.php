@@ -22,7 +22,7 @@
             exit; 
         } 
         $rand = rand(100, 999); 
-        $pics = date("YmdHis") . $rand . $type; //命名图片名称 
+        $pics = md5(time().mt_rand(10, 99)) . $rand . $type; //命名图片名称 
         $pic_path = "upload/". $pics; 
         move_uploaded_file($_FILES['upload']['tmp_name'], $pic_path); 
     } 
