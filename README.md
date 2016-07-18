@@ -19,6 +19,7 @@
     <li><a href="http://lefeier.net/ext/gomeplusUI/label.html" target="_blank">label</a></li>
     <li><a href="http://lefeier.net/ext/gomeplusUI/segment.html" target="_blank">segment</a></li>
     <li><a target="_blank">icon 提供图标</a></li>
+    <li><a target="_blank">loader 加载器 提供加载状态</a></li>
   </ul>
   <h4>视图中处理的</h4>
   <ul>
@@ -48,12 +49,13 @@
     <li><a href="http://lefeier.net/ext/gomeplusUI/shape.html" target="_blank">shape</a></li>
     <li><a href="http://lefeier.net/ext/gomeplusUI/slide.html" target="_blank">slide</a></li>
     <li><a href="http://lefeier.net/ext/gomeplusUI/avator.html" target="_blank">avator 上传头像</a></li>
+    <li><a href="http://lefeier.net/ext/gomeplusUI/avator1.html" target="_blank">avator 上传头像 剪裁生成三种规格</a></li>
   </ul>
   <h4>api</h4>
   <ul>
   	<li><a href="http://lefeier.net/ext/gomeplusUI/api.html" target="_blank">api</a></li>
   </ul>
   <h4>semantic-ui中下列的没有添加</h4>
-  <h4>元素</h4> 容器 ontainer、 国旗 flag、 加载器 loader、 列表 list、 图片 image、 遮罩 reveal、 步骤 step；
+  <h4>元素</h4> 容器 ontainer、 国旗 flag、 列表 list、 图片 image、 遮罩 reveal、 步骤 step；
   <h4>组合</h4> 网格 grid；
   <h4>模块中没添加的：</h4> nag 本质是个message、 sidebar、 Sticky、 embed 嵌入youtube的视频；
