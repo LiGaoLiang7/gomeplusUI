@@ -109,16 +109,13 @@
   .shuff .flip.next {
     visibility: hidden;
     right: 0;
-    background-position: 0px -167px
+    background-position: 0px -167px;
   }
-  
   .shuff .flip.next:hover {
-    background-position: 0px -237px
+    background-position: 0px -237px;
   }
-  
   .shuff:hover .flip {
     visibility: visible;
-    /* 悬停的时候显示翻页 */
   }
   </style>
   <link rel="stylesheet" href="./css/normalize.css">
@@ -159,7 +156,7 @@
   <div class="ui bottom attached secondary segment">
     <p>This segment is on bottom</p>
   </div>
-  <script src="./js/plug/slideSeven.min.js"></script>
+  <script src="./js/plug/slideSeven.js"></script>
   <script>
   window.onload = function() {
     var shuff = new Slide('topShuff', true, true, true);

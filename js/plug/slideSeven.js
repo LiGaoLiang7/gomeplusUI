@@ -107,13 +107,16 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
             if (isAutoPlay) _this.clearIntervalId();
         });
     };
+    /* set ul left style */
     Slide.prototype.slideLeft = function(offsetLeft) {
         this.slideBox.style.left = offsetLeft;
     };
-    this.setOffsetLeft = function(offsetLeft) { // 必须在这里修改变量 事件处理函数的作用域处理不了
+    /* set ul left value */
+    this.setOffsetLeft = function(offsetLeft) {
         this.offsetLeft = offsetLeft;
     };
-    this.clearIntervalId = function() { // 点击完毕停止自动播放 5秒后恢复
+    /* stop auto play while Filped, then start it again after 5 senconds */
+    this.clearIntervalId = function() {
         clearInterval(this.intervalId);
         this.setAutoPlay();
     };
@@ -123,21 +126,21 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
             _this.goNext();
         }, 5000);
     };
-    Slide.prototype.addDotEvent = function() { //给小点点添加事件
+    /* Add click Event for dot */
+    Slide.prototype.addDotEvent = function() {
         if (this.ctrlBox === null) return;
-        var ctrlItems = this.ctrlBox.querySelectorAll('span');
+        var ctrlItems = this.ctrlBox;
         var _this = this;
-        for (var i = 0; i < ctrlItems.length; i++) {
-            ctrlItems.item(i).addEventListener('click', function(event) {
-                var pos = (-(parseInt(event.target.getAttribute('data-item')) + 1) * _this.boxWidth) + 'px';
-                _this.setOffsetLeft(pos);
-                _this.slideLeft(pos);
-                var siblings = event.target.parentNode.querySelectorAll('span');
-                for (var i = 0; i < siblings.length; i++) {
+        ctrlItems.addEventListener('click', function(event){
+            if(event.target.nodeName === "DIV")return;
+            var pos = (-(parseInt(event.target.getAttribute('data-item')) + 1) * _this.boxWidth) + 'px';
+            _this.setOffsetLeft(pos);
+            _this.slideLeft(pos);
+            var siblings = ctrlItems.querySelectorAll('span');
+            for (var i = 0; i < siblings.length; i++) {
                     siblings.item(i).className = '';
                 }
                 event.target.className = 'active';
-            });
-        }
+        });
     };
 }
