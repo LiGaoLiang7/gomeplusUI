@@ -1,5 +1,19 @@
+/*  @Class: Slide
+    @function: 
+        Unlimited scrolling
+        You can use the arrows or the point to switch the picture
+    @parameter:
+        elementId     string
+        hasCtrlPoints boolean
+        isFlip        boolean
+        isAutoPlay    boolean
+    @author ligaoliang0211@gmail.com
+ */
 function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
     this.element = elementId;
+    this.hasCtrlPoints = hasCtrlPoints;
+    this.isFlip = isFlip;
+    this.isAutoPlay = isAutoPlay;
     this.slideBox = null;
     this.shfirstChild = null;
     this.shlastChild = null;
@@ -8,9 +22,121 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
     this.count = 0;
     this.ctrlBox = null;
     this.intervalId = 0;
-    Slide.prototype.init = function() {
+    /* EventUtil For Cross Bowsers */
+    this.EventUtil = {
+        addEventHandler: function(element, type, handlerFunction) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handlerFunction, false);
+            } else if (element.attachEvent) { /* IE<=8 */
+                element.attachEvent('on' + type, handlerFunction);
+            }
+        },
+        removeEventHandler: function(element, type, handlerFunction) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handlerFunction, false);
+            } else if (element.detachEvent) { /* IE<=8 */
+                element.detachEvent('on' + type, handlerFunction);
+            }
+        }
+    };
+}
+
+Slide.prototype = {
+    /* Change pointer status */
+    activeCtrl: function(direction) {
+        if (this.ctrlBox === null) return;
+        var ctrlItems = this.ctrlBox.querySelectorAll('span');
+        var indexMark = 0;
+        for (var i = 0; i < ctrlItems.length; i++) {
+            if (ctrlItems.item(i).className === 'active') {
+                ctrlItems.item(i).className = '';
+                indexMark = i;
+            }
+        }
+        indexMark += direction ? 1 : -1;
+        indexMark = (indexMark === ctrlItems.length) ? 0 : indexMark;
+        indexMark = (indexMark === -1) ? (ctrlItems.length - 1) : indexMark;
+        ctrlItems.item(indexMark).className = 'active';
+    },
+    goNext: function() {
+        this.offsetLeft = parseInt(this.offsetLeft) - this.boxWidth + 'px';
+        this.slideLeft(this.offsetLeft);
+        this.slideBox.className = 'slidebox transition';
+        if (parseInt(this.offsetLeft) === -this.boxWidth * (this.count + 1)) {
+            var _this = this;
+            setTimeout(function() {
+                _this.slideBox.className += ' nonetransition';
+                _this.offsetLeft = '-' + _this.boxWidth + 'px';
+                _this.slideLeft(_this.offsetLeft);
+            }, 300);
+        }
+        this.activeCtrl(true);
+    },
+    goPrev: function() {
+        this.offsetLeft = parseInt(this.offsetLeft) + this.boxWidth + 'px';
+        this.slideLeft(this.offsetLeft);
+        this.slideBox.className = 'slidebox transition';
+        if (parseInt(this.offsetLeft) === this.boxWidth * 0) {
+            var _this = this;
+            setTimeout(function() {
+                _this.slideBox.className += ' nonetransition';
+                _this.offsetLeft = '-' + (_this.boxWidth * _this.count) + 'px';
+                _this.slideLeft(_this.offsetLeft);
+            }, 300);
+        }
+        this.activeCtrl(false);
+    },
+    addFlipEvent: function() {
+        var prevBtn = this.slideBox.parentNode.querySelector('.flip.prev');
+        var nextBtn = this.slideBox.parentNode.querySelector('.flip.next');
+        var _this = this;
+        this.EventUtil.addEventHandler(nextBtn, 'click', function(event) {
+            _this.goNext();
+            if (_this.isAutoPlay) _this.clearIntervalId();
+        });
+        this.EventUtil.addEventHandler(prevBtn, 'click', function(event) {
+            _this.goPrev();
+            if (_this.isAutoPlay) _this.clearIntervalId();
+        });
+    },
+    slideLeft: function(offsetLeft) {
+        this.slideBox.style.left = offsetLeft;
+    },
+    addDotEvent: function() {
+        if (this.ctrlBox === null) return;
+        var ctrlItems = this.ctrlBox;
+        var _this = this;
+        this.EventUtil.addEventHandler(ctrlItems, 'click', function(event) {
+            if (event.target.nodeName === "DIV") return;
+            /* click not on span bugs */
+            var pos = (-(parseInt(event.target.getAttribute('data-item')) + 1) * _this.boxWidth) + 'px';
+            _this.setOffsetLeft(pos);
+            _this.slideLeft(pos);
+            var siblings = ctrlItems.querySelectorAll('span');
+            for (var i = 0; i < siblings.length; i++) {
+                siblings.item(i).className = '';
+            }
+            event.target.className = 'active';
+        });
+    },
+    /* set leftoffest value */
+    setOffsetLeft: function(offsetLeft) {
+        this.offsetLeft = offsetLeft;
+    },
+    /* stop auto play while Filped, then start it again after 5 senconds */
+    clearIntervalId: function() {
+        clearInterval(this.intervalId);
+        this.setAutoPlay();
+    },
+    setAutoPlay: function() {
+        var _this = this;
+        this.intervalId = setInterval(function() {
+            _this.goNext();
+        }, 5000);
+    },
+    init: function() {
         this.slideBox = document.getElementById(this.element);
-        if (this.slideBox.childNodes.length > 0) { // 初始化变量 复制两个节点并插入 无限循环滚动使用
+        if (this.slideBox.childNodes.length > 0) {
             this.count = this.slideBox.querySelectorAll('li').length;
             this.shfirstChild = this.slideBox.querySelector('li').cloneNode(true);
             this.shlastChild = this.slideBox.querySelectorAll('li:last-child')[0].cloneNode(true);
@@ -25,7 +151,8 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
                 this.slideBox.style.width = this.boxWidth * this.count + 'px';
             }
         }
-        if (hasCtrlPoints) { //添加小点点
+        /* add control points and events for them */
+        if (this.hasCtrlPoints) {
             var ctrlBox = document.createElement('div');
             ctrlBox.className = "ctrlbox";
             for (var i = 0; i < this.count; i++) {
@@ -38,7 +165,8 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
             this.ctrlBox = this.slideBox.parentNode.querySelector('.ctrlbox');
             this.addDotEvent();
         }
-        if (isFlip) { // 添加两边的翻页箭头
+        /* add arrow */
+        if (this.isFlip) {
             var prev = document.createElement('a'),
                 next = document.createElement('a');
             prev.className = 'flip prev';
@@ -47,100 +175,9 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
             this.slideBox.parentNode.appendChild(next);
             this.addFlipEvent();
         }
-        if (isAutoPlay) { // 自动翻页 5秒
+        /* auto play */
+        if (this.isAutoPlay) {
             this.setAutoPlay();
         }
-    };
-    Slide.prototype.activeCtrl = function(direction) { // 改变点点的状态
-        if (this.ctrlBox === null) return;
-        var ctrlItems = this.ctrlBox.querySelectorAll('span');
-        var indexMark = 0;
-        for (var i = 0; i < ctrlItems.length; i++) {
-            if (ctrlItems.item(i).className === 'active') {
-                ctrlItems.item(i).className = '';
-                indexMark = i;
-            }
-        }
-        indexMark += direction ? 1 : -1;
-        indexMark = (indexMark === ctrlItems.length) ? 0 : indexMark;
-        indexMark = (indexMark === -1) ? (ctrlItems.length - 1) : indexMark;
-        ctrlItems.item(indexMark).className = 'active';
-    };
-    Slide.prototype.goNext = function() { // 向后翻
-        this.offsetLeft = parseInt(this.offsetLeft) - this.boxWidth + 'px';
-        this.slideLeft(this.offsetLeft);
-        this.slideBox.className = 'slidebox transition';
-        if (parseInt(this.offsetLeft) === -this.boxWidth * (this.count + 1)) {
-            var _this = this;
-            setTimeout(function() {
-                _this.slideBox.className += ' nonetransition';
-                _this.offsetLeft = '-' + _this.boxWidth + 'px';
-                _this.slideBox.style.left = _this.offsetLeft;
-            }, 380);
-        }
-        this.activeCtrl(true);
-    };
-    Slide.prototype.goPrev = function() { // 向前翻
-        this.offsetLeft = parseInt(this.offsetLeft) + this.boxWidth + 'px';
-        this.slideLeft(this.offsetLeft);
-        this.slideBox.className = 'slidebox transition';
-        if (parseInt(this.offsetLeft) === this.boxWidth * 0) {
-            var _this = this;
-            setTimeout(function() {
-                _this.slideBox.className += ' nonetransition';
-                _this.offsetLeft = '-' + (_this.boxWidth * _this.count) + 'px';
-                _this.slideBox.style.left = _this.offsetLeft;
-            }, 380);
-        }
-        this.activeCtrl(false);
-    };
-    Slide.prototype.addFlipEvent = function() { // 给箭头添加事件
-        var prevBtn = this.slideBox.parentNode.querySelector('.flip.prev');
-        var nextBtn = this.slideBox.parentNode.querySelector('.flip.next');
-        var _this = this;
-        nextBtn.addEventListener('click', function(event) {
-            _this.goNext();
-            if (isAutoPlay) _this.clearIntervalId();
-        });
-        prevBtn.addEventListener('click', function(event) {
-            _this.goPrev();
-            if (isAutoPlay) _this.clearIntervalId();
-        });
-    };
-    /* set ul left style */
-    Slide.prototype.slideLeft = function(offsetLeft) {
-        this.slideBox.style.left = offsetLeft;
-    };
-    /* set ul left value */
-    this.setOffsetLeft = function(offsetLeft) {
-        this.offsetLeft = offsetLeft;
-    };
-    /* stop auto play while Filped, then start it again after 5 senconds */
-    this.clearIntervalId = function() {
-        clearInterval(this.intervalId);
-        this.setAutoPlay();
-    };
-    this.setAutoPlay = function() {
-        var _this = this;
-        this.intervalId = setInterval(function() {
-            _this.goNext();
-        }, 5000);
-    };
-    /* Add click Event for dot */
-    Slide.prototype.addDotEvent = function() {
-        if (this.ctrlBox === null) return;
-        var ctrlItems = this.ctrlBox;
-        var _this = this;
-        ctrlItems.addEventListener('click', function(event){
-            if(event.target.nodeName === "DIV")return;
-            var pos = (-(parseInt(event.target.getAttribute('data-item')) + 1) * _this.boxWidth) + 'px';
-            _this.setOffsetLeft(pos);
-            _this.slideLeft(pos);
-            var siblings = ctrlItems.querySelectorAll('span');
-            for (var i = 0; i < siblings.length; i++) {
-                    siblings.item(i).className = '';
-                }
-                event.target.className = 'active';
-        });
-    };
-}
+    }
+};
