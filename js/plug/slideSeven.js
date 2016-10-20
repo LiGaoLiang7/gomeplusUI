@@ -22,7 +22,7 @@ function Slide(elementId, hasCtrlPoints, isFlip, isAutoPlay) {
     this.count = 0;
     this.ctrlBox = null;
     this.intervalId = 0;
-    /* EventUtil For Cross Bowsers */
+    /* EventUtil For Cross Browser */
     this.EventUtil = {
         addEventHandler: function(element, type, handlerFunction) {
             if (element.addEventListener) {
@@ -136,10 +136,10 @@ Slide.prototype = {
     },
     init: function() {
         this.slideBox = document.getElementById(this.element);
-        if (this.slideBox.childNodes.length > 0) {
+        if (this.slideBox.querySelectorAll('li').length > 0) {
             this.count = this.slideBox.querySelectorAll('li').length;
             this.shfirstChild = this.slideBox.querySelector('li').cloneNode(true);
-            this.shlastChild = this.slideBox.querySelectorAll('li:last-child')[0].cloneNode(true);
+            this.shlastChild = this.slideBox.querySelector('li:last-child').cloneNode(true);
             this.slideBox.appendChild(this.shfirstChild);
             this.slideBox.insertBefore(this.shlastChild, this.slideBox.firstChild);
             this.boxWidth = this.shfirstChild.clientWidth;
@@ -149,6 +149,8 @@ Slide.prototype = {
                 this.slideBox.style.left = this.offsetLeft;
             } else if (this.boxWidth !== 0 && this.count <= 1) {
                 this.slideBox.style.width = this.boxWidth * this.count + 'px';
+                this.slideBox.style.left = '0';
+                this.isFlip = this.hasCtrlPoints = this.isAutoPlay = false;
             }
         }
         /* add control points and events for them */
