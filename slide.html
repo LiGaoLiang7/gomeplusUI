@@ -3,14 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>slide</title>
+    <title>slide demo</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/segment.css">
     <style>
-    body {
-        padding: 0;
-        width: 80%;
-        margin: 0 auto !important;
-    }
-    
     .shuff {
         position: relative;
         overflow: hidden;
@@ -125,11 +121,10 @@
         visibility: visible;
     }
     </style>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/segment.css">
+    
 </head>
 
-<body>
+<body style="margin:0 auto; width:80%;">
     <div class="ui top attached secondary segment">
         <p>This segment is on top</p>
     </div>
@@ -163,7 +158,7 @@
     <div class="ui bottom attached secondary segment">
         <p>This segment is on bottom</p>
     </div>
-    <script src="./js/plug/slideSeven.js"></script>
+    <script src="./js/plug/slide.js"></script>
     <script>
     window.onload = function() {
         var shuff = new Slide('slidebox_j', true, true, true);
